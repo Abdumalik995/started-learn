@@ -9,6 +9,12 @@ $massiv1 = array(array('Nomi'=>'Monitor', 'Modeli'=>'LG', 'Narxi'=>'100$', 'Soni
 	array('Nomi'=>'Noutbook', 'Modeli'=>'Lenovo', 'Narxi'=>'300$', 'Soni'=>'3'),
 
 );
+$massiv2 = array(array('Monitor','LG','100$','4'),
+	array('Klaviatura','Keyboard','12$','8'),
+	array('Printer','Canon','70$','10'),
+	array('Noutbook','Lenovo','300$','3'),
+
+);
 // foreach ($massiv as $value) {
 // 		//echo "$value"."<br>";
 // 	}
@@ -49,9 +55,10 @@ $massiv1 = array(array('Nomi'=>'Monitor', 'Modeli'=>'LG', 'Narxi'=>'100$', 'Soni
 			    margin: 10px;
 			}
 			#gall div:hover {
-				transform: scale(1.2);
-				animation-duration: 2s;
-				animation-direction: linear;
+				transform: scale(1.5);
+				transition-duration: 2s;
+				background: #fff;
+				color: #000;
 
 			}
         </style>
@@ -74,21 +81,31 @@ $massiv1 = array(array('Nomi'=>'Monitor', 'Modeli'=>'LG', 'Narxi'=>'100$', 'Soni
     		</tr>
     	<?php } ?>
     	</table>
-   <!--  <h1>Qiymatlar bilan ishlash.</h1>
+    	<table border="1" width="400" style="margin-top: 50px">
+    		<?php foreach($massiv2 as $value) { ?>
+    			<th>Nomi</th>
+    		<?php } ?>
+    		
+    		<?php foreach ($massiv2 as $value) { ?>    			
+    		<tr>
+    			<td><?php echo $value[0]; ?></td>
+    			<td><?php echo $value[1]; ?></td>
+    			<td><?php echo $value[2]; ?></td>
+    			<td><?php echo $value[3]; ?></td>    			
+    		</tr>
+    	<?php } ?>
+    	</table>
+    <h1>Qiymatlar bilan ishlash.</h1>
     
     <div id="gall">
     	<?php foreach ($massiv as $value) { ?>
-    		
-    	
-    		
-    	
     	
 	    <div>
 	    	<?php echo $value; ?>
 	    </div>
 	<?php } ?>
 	   
-    </div> -->
+    </div>
     </body>
 
 
