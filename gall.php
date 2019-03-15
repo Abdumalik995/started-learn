@@ -33,9 +33,12 @@
 			    margin: 10px;
 			}
 			#gall div:hover {
-				transform: scale(1.2);
-				animation-duration: 2s;
-				animation-direction: linear;
+				transform: scale(1.4);
+				transition-duration: 2s;
+				
+			}
+			.matn {
+				border-radius: 50%;
 			}
         </style>
                                 
@@ -46,10 +49,8 @@
     
     <div id="gall">
     	<?php for ($i=12; $i >=1 ; $i--) { ?>
-    		
-    	
-    	
-	    <div>
+    		    	
+	    <div class="matn">
 	    	<?php echo $i; ?>
 	    </div>
 	<?php } ?>

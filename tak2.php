@@ -1,20 +1,21 @@
 <?php 
-$massiv = array('Monitor','Klaviatura','Sichqoncha','Fleshka','Noutbook');
+$massiv = array('Monitor','Klaviatura','Sichqoncha','Fleshka','Notebook');
 // echo "<pre>";
 // print_r($massiv);
 // echo "</pre>";
 $massiv1 = array(array('Nomi'=>'Monitor', 'Modeli'=>'LG', 'Narxi'=>'100$', 'Soni'=>'4'),
 	array('Nomi'=>'Klaviatura', 'Modeli'=>'Keyboard', 'Narxi'=>'12$', 'Soni'=>'8'),
 	array('Nomi'=>'Printer', 'Modeli'=>'Canon', 'Narxi'=>'70$', 'Soni'=>'10'),
-	array('Nomi'=>'Noutbook', 'Modeli'=>'Lenovo', 'Narxi'=>'300$', 'Soni'=>'3'),
+	array('Nomi'=>'Notebook', 'Modeli'=>'Lenovo', 'Narxi'=>'300$', 'Soni'=>'3'),
 
 );
 $massiv2 = array(array('Monitor','LG','100$','4'),
 	array('Klaviatura','Keyboard','12$','8'),
 	array('Printer','Canon','70$','10'),
-	array('Noutbook','Lenovo','300$','3'),
+	array('Notebook','Lenovo','300$','3'),
 
 );
+
 // foreach ($massiv as $value) {
 // 		//echo "$value"."<br>";
 // 	}
@@ -55,7 +56,7 @@ $massiv2 = array(array('Monitor','LG','100$','4'),
 			    margin: 10px;
 			}
 			#gall div:hover {
-				transform: scale(1.5);
+				transform: scale(1.3);
 				transition-duration: 2s;
 				background: #fff;
 				color: #000;
