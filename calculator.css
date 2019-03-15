@@ -1,0 +1,55 @@
+body {
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 50px;
+}
+input[type=button] {
+    border: none;
+    width: 55px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    background: #191533eb;
+    color: #fff;
+    cursor: pointer;
+}
+table {
+    width: 100%;
+}
+input {
+    margin-left: 3px;
+    margin-top: 10px;
+}
+#hero {
+    text-align: center;
+    margin: auto;
+    width: 280px;
+    height: 430px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.9);
+    padding-top: 5px;
+    box-shadow: 0 0 10px #000;
+}
+
+
+.display {
+    margin: 0;
+    border: none;
+    padding-top: 25px;
+    text-align: right;
+    width: 95% !important;
+    height: 150px !important;
+    background: #ccc;
+    color: #000;
+    font-size: 27px;
+    font-weight: bold;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+input.num {
+    margin-left: 15px;
+    background-color: #ff000063;
+    border-radius: 50%;
+}
+
