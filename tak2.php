@@ -15,6 +15,9 @@ $massiv2 = array(array('Monitor','LG','100$','4'),
 	array('Notebook','Lenovo','300$','3'),
 
 );
+foreach ($massiv1 as $key => $value) {
+	echo $key. $value;
+}
 
 // foreach ($massiv as $value) {
 // 		//echo "$value"."<br>";
@@ -82,6 +85,10 @@ $massiv2 = array(array('Monitor','LG','100$','4'),
     		</tr>
     	<?php } ?>
     	</table>
+
+
+
+    	
     	<table border="1" width="400" style="margin-top: 50px">
     		<?php foreach($massiv2 as $value) { ?>
     			<th>Nomi</th>
