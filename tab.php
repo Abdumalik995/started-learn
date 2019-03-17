@@ -5,6 +5,8 @@ $friends = array(array('ismi'=>'Muh','yoshi'=>'24','kasbi'=>'mebelchi'),
 	array('ismi'=>'Zafar', 'yoshi'=>'24','kasbi'=>'Chorvador'),
 	array('ismi'=>'Otash', 'yoshi'=>'24','kasbi'=>'Loyihalovchi'));
 //print_r($friends);
+
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -41,9 +43,9 @@ $friends = array(array('ismi'=>'Muh','yoshi'=>'24','kasbi'=>'mebelchi'),
 	    <div>
 	    	<p><?php echo $i; ?></p>
 	    </div>
-	<?php } ?>
+		<?php } ?>
 	   
-    <table border="1" width="400">
+    	<table border="1" width="400">
     		<?php for ($i=1; $i<=3 ; $i++) { ?>
     			<th><?php echo $i ?></th>
     		<?php } ?> 
@@ -55,7 +57,7 @@ $friends = array(array('ismi'=>'Muh','yoshi'=>'24','kasbi'=>'mebelchi'),
     			<td><?php echo $value['kasbi']; ?></td>
     			   			
     		</tr>
-    	<?php } ?>
+    		<?php } ?>
     	
     	</table>
     </body>

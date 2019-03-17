@@ -15,10 +15,13 @@ $massiv2 = array(array('Monitor','LG','100$','4'),
 	array('Notebook','Lenovo','300$','3'),
 
 );
-foreach ($massiv1 as $key => $value) {
-	echo $key. $value;
-}
+// foreach ($massiv1 as $key => $value) {
+// 	echo $key. $value;
+// }
 
+// $val = "massa";
+// echo $val;
+// echo "\$val";
 // foreach ($massiv as $value) {
 // 		//echo "$value"."<br>";
 // 	}
