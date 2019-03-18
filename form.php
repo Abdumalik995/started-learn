@@ -49,7 +49,7 @@
 </html>
 
 <?php 
-	if (isset($_POST['aa']) && isset($_POST['bb'])) {
+	if(isset($_POST['aa']) and isset($_POST['bb'])) {
 
 		$a = $_POST['aa'];
 		$b = $_POST['bb'];
@@ -70,7 +70,7 @@
 				break;
 			
 			default:
-				# code...
+				echo "Qiymat tanlanmagan";
 				break;
 		}
 	}
