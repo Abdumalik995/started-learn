@@ -5,7 +5,7 @@ $c = -8;
 $f = 17;
 $disc = sqrt(pow($b, 2)-4*$a*$c);
 $x1 = (-$b-$disc)/2*$a;// x1 = (-$b - $d)/2*$a;
-$x2 = (-$b+$disc)/2*$a;
+$x2 = ($b+$disc)/2*$a;
 
 // if($a>$b and $a>$d) {
 // 	echo "a katta ";

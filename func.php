@@ -1,4 +1,5 @@
 <?php 
+/*===1===*/
 	// function yuza($name=" Dasturchi") {
 	// 	echo "Salom ",$name,"<br>";
 	// }
@@ -6,7 +7,8 @@
 	// yuza(' Sarvar');
 	// yuza(' Sardor');
 	// yuza();
-
+/*==1==*/
+/*==2==*/
 	// function kvadrat($a) {
 	// 	return $a*$a;
 	// }	
@@ -15,12 +17,16 @@
  //  echo kvadrat(10)."<br>";
  //  echo kvadrat(15)."<br>";
  //  echo kvadrat(20)."<br>";
+/*==2==*/
 
+/*==3==*/
  //  function yuza1($a) {
 	// 	echo 'kv = '.$a*$a.'<br>';
 	// }
 	// yuza1(10);
+/*==3==*/
 
+/*==4==*/
 	// function qiymat($a, $b) {
 	// 	$p=1;
 	// 	for($i=$a; $i<$b; $i++) {
@@ -31,7 +37,8 @@
 	// }
 	//echo "Summa ",qiymat(2, 10).'<br>';
 	//echo qiymat(10, 20);
-	/*------*/
+/*==4==*/
+	/*---5---*/
 	function summa($a=0, $b=0) {
 		if ($a == 0 && $b == 0) {
 		echo "Qiymat berilmagan";
@@ -45,11 +52,13 @@
 		
 		return $p;
 		}
-		/*---*/
+		/*--5--*/
 		
 	}
-	//echo "Summa ",qiymat(2, 10).'<br>';
+	//echo "Summa ".summa(2, 10).'<br>';
 	//echo summa();
+
+	/*======*/
 	// $d=1;
 	// function hisoblash() {
 	// 	$d = 2;
@@ -85,7 +94,7 @@
 	// foo();
 	/*----*/
 
-	/*---*/
+	/*--==and==--*/
 	$f = 1;	
 	function sgl() {
 		$f = 0;
@@ -99,6 +108,7 @@
 
 	}
 	sgl();
-	/*-----==----*/
+	sgl();
+	/*----and----*/
 
  ?>

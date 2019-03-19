@@ -28,5 +28,7 @@ if(in_array($oy, $oylar)) {
 } else {
 	echo "<br>Oy nomi mavjud emas";
 }
+
+
 //echo date("d.m.Y");
 ?>

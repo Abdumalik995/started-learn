@@ -38,6 +38,7 @@
 		a = <input type="number" name="aa" placeholder=""><br>
 		b = <input type="number" name="bb"><br>
 		<select name="sel">
+			<option value=""> </option>
 			<option value="plus">+</option>
 			<option value="min">-</option>
 			<option value="kup">*</option>
@@ -57,16 +58,16 @@
 
 		switch ($c) {
 			case "plus":
-				echo "Yig'indi ".($a + $b);
+				echo "Yig'indi ".($a + $b); //yoki echo "Yig'indi ".($POST['aa'] + $POST['bb']);
 				break;
 				case "min":
-				echo "Ayirma ".($a - $b);
+				echo "Ayirma ".($a - $b);//yoki echo "Ayirma ".($POST['aa'] - $POST['bb']);
 				break;
 				case "kup":
-				echo "Ko'paytma ".($a * $b);
+				echo "Ko'paytma ".($a * $b); //yoki echo "Ko'paytma ".($POST['aa'] * $POST['bb']);
 				break;
 				case "bul":
-				echo "Bulinma ".($a / $b);
+				echo "Bulinma ".($a / $b); //yoki echo "Bo'linma ".($POST['aa'] / $POST['bb']);
 				break;
 			
 			default:
@@ -75,10 +76,12 @@
 		}
 	}
 
-//post orqali yuborsak ma'lumot yashirin bo'ladi....
+//post orqali yuborsak ma'lumot yashirin bo'ladi....// get orqali yuborilganda ma'lumotimiz ma'lum bir so'roqlar orqali bajariladi.
+
 	// if (isset($_GET['a'])) {
 	// 	echo "Qiymat Mavjud";
 	// } else {
 	// 	echo "Qiymat Mavjud emas";
 	// }
+	print_r($_POST);
  ?>
