@@ -15,8 +15,8 @@
     background: #fff;
     box-shadow: 0px 0px 10px #efe8e8;
     overflow: hidden;
-}
-#mail>form>input, #mail>form>textarea {
+	}
+	#mail>form>input, #mail>form>textarea {
     margin-bottom: 20px;
     width: 50%;
     height: 40px;
@@ -26,11 +26,11 @@
     padding-left: 20px;
     border: none;
     border-radius: 3px;
-}
-#mail>form>textarea {
+	}
+	#mail>form>textarea {
     padding-top: 7px;
-}
-#mail>form>#sub {
+	}
+	#mail>form>#sub {
     margin-top: 25px;
     margin-bottom: 70px;
     width: 170px;
@@ -41,7 +41,7 @@
     border: none;
     box-shadow: 0px 0px 10px #7b7474;
     cursor: pointer;
-}
+	}
 </style>
 <body>
 
