@@ -46,6 +46,7 @@
 <body>
 
 	<div id="mail">
+		
 			<h3>Talk to <span>me</span></h3>
 			<form id="form" action="#">
 			<input type="text" name="text" name="name" placeholder="full name here">
