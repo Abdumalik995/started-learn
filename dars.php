@@ -45,6 +45,6 @@ $da = pow($r, 5);
 $s = PI*($r*$r);
 //echo $s;
 echo $da;
-
+// php veb hosting xizmatidan yoki web serverdan foydalanishimiz mumkin. Bunda web hostimiz phpni qullaydigan bo'lsa web host o'zi yetarli.
 
 ?>
