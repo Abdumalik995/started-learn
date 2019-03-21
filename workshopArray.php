@@ -41,5 +41,24 @@ if(in_array("Turkmaniston", $poytaxt)) {
 //echo "massiv elementlari yigindisi ", $num[1]+round($nums[2]).'<br>';
 //echo " massiv elementlari ayirmasi ", round($nums[2])-$num[1].'<br>';
 //echo " massiv elementi va alohida o` zgaruvchi ayirmasi ", $num[1]-$c.'<br>';
-
+/*
+<?
+ $ship = array(
+ "Passenger ship" => array("Yacht","Liner","Ferry"),
+ "War ship" => array("Battle-wagon","Submarine","Cruiser"),
+ "Freight ship" => array("Tank vessel","Dry-cargo ship","Container
+ cargo ship")
+ );
+ foreach($ship as $key => $type)
+ {
+ echo(
+ "<h2>$key</h2>\n"."<ul>\n");
+ foreach($type as $ship)
+ {
+ echo("\t<li>$ship</li>\n");
+ }
+ }
+ echo("</ul>\n");
+?>
+*/
 ?>
