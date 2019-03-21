@@ -16,6 +16,7 @@
 // echo "Qatorni belgilangan qismidan qirqib olish ..berilgan qiymatgacha ..", substr($matn, 15, 4)."<br>";
 // echo "Qatorni belgilangan qismidan qirqib olish ..", substr($matn, 15)."<br>";
 // echo "striplashes teskari slashni uchirish uchun " ...va magic_quotes_gps yoqilgan bulishi kerak.
+ echo " kichik harflarga uzgartirish, bunda strdagi har qanday katta harflar kichik harflarga utqaziladi". strtolower($matn);
 $str = 'foo   o';
 $str = preg_replace('/\s\s+/', ' ', $str);
 //echo $str;
