@@ -56,7 +56,8 @@ echo ekub(18,72).'<br>';
 echo ekub(12,42).'<br>';*/
 /*====*/
 /*=======*/
-function test() {
+
+/*function test() {
 	static $soni = 1;
 	$soni++;
 	echo "Funksiyaning chaqirilishlar soni = $soni <br>";
@@ -66,7 +67,9 @@ function test() {
 test();
 test();
 test();
-test();
+test();*/
+/*====*/
+
 
 //echo htmlspecialchars(" & ", ENT_COMPAT);
 //$tt = "mashq";
