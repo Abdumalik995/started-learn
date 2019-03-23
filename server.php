@@ -34,6 +34,7 @@ echo floor(1.9)."<br>";
 echo ceil(-1.9)."<br>";
 echo ceil(1.9)."<br>";
 print_r($_GET);
+echo '<a href="?x=5&y=6">Bos</a>';
 //$tt = "mashq";
 //unset($tt);
 //var_dump($tt);
