@@ -34,9 +34,13 @@ echo floor(1.9)."<br>";
 echo ceil(-1.9)."<br>";
 echo ceil(1.9)."<br>";
 print_r($_GET);
-echo '<a href="?x=5&y=6">Bos</a>';
-$matn1 = "Ma\'lumot o'rnida";
-echo stripcslashes($matn1);
+echo '<a href="?x=5&y=6">Bos</a><br>';
+$matn1 = "<h1>Ma\'lumot 'o\'rnida'</h1><br>";
+echo htmlspecialchars($matn1, ENT_COMPAT);
+echo htmlspecialchars($matn1, ENT_QUOTES);
+echo htmlspecialchars($matn1, ENT_NOQUOTES);
+//echo stripcslashes($matn1);
+
 
 //echo htmlspecialchars(" & ", ENT_COMPAT);
 //$tt = "mashq";
