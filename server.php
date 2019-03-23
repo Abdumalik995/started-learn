@@ -35,6 +35,10 @@ echo ceil(-1.9)."<br>";
 echo ceil(1.9)."<br>";
 print_r($_GET);
 echo '<a href="?x=5&y=6">Bos</a>';
+$matn1 = "Ma\'lumot o'rnida";
+echo stripcslashes($matn1);
+
+//echo htmlspecialchars(" & ", ENT_COMPAT);
 //$tt = "mashq";
 //unset($tt);
 //var_dump($tt);
