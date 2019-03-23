@@ -29,4 +29,12 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select count(davlat)  from salon1 where davlat="Turkiya"
 // select count(davlat), name, davlat, narxi  from salon1 where davlat="Turkiya"
 // select name, davlat, narxi  from salon1 where yil>"2019-02-10"
+echo floor(-1.9)."<br>";
+echo floor(1.9)."<br>";
+echo ceil(-1.9)."<br>";
+echo ceil(1.9)."<br>";
+print_r($_GET);
+//$tt = "mashq";
+//unset($tt);
+//var_dump($tt);
  ?>
