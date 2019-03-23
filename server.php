@@ -40,7 +40,8 @@ echo htmlspecialchars($matn1, ENT_COMPAT);
 echo htmlspecialchars($matn1, ENT_QUOTES);
 echo htmlspecialchars($matn1, ENT_NOQUOTES);
 //echo stripcslashes($matn1);
-function ekub($x, $y) {
+/*=====*/
+/*function ekub($x, $y) {
 	while($x!=$y) {
 		if($x>$y) {
 			$x-=$y;
@@ -52,8 +53,20 @@ function ekub($x, $y) {
 }
 echo ekub(18,24).'<br>';
 echo ekub(18,72).'<br>';
-echo ekub(12,42).'<br>';
+echo ekub(12,42).'<br>';*/
+/*====*/
+/*=======*/
+function test() {
+	static $soni = 1;
+	$soni++;
+	echo "Funksiyaning chaqirilishlar soni = $soni <br>";
 
+
+}
+test();
+test();
+test();
+test();
 
 //echo htmlspecialchars(" & ", ENT_COMPAT);
 //$tt = "mashq";
