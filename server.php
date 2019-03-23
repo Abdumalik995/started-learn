@@ -40,6 +40,19 @@ echo htmlspecialchars($matn1, ENT_COMPAT);
 echo htmlspecialchars($matn1, ENT_QUOTES);
 echo htmlspecialchars($matn1, ENT_NOQUOTES);
 //echo stripcslashes($matn1);
+function ekub($x, $y) {
+	while($x!=$y) {
+		if($x>$y) {
+			$x-=$y;
+		} else {
+			$y-=$x;
+		}
+	} 
+	return $x;
+}
+echo ekub(18,24).'<br>';
+echo ekub(18,72).'<br>';
+echo ekub(12,42).'<br>';
 
 
 //echo htmlspecialchars(" & ", ENT_COMPAT);
