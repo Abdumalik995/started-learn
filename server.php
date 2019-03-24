@@ -76,3 +76,14 @@ test();*/
 //unset($tt);
 //var_dump($tt);
  ?>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ </head>
+ <body>
+ 	<form action="" method="POST"><script>alert('hacked')</script>
+ 		<input type="text" name="">
+ 	</form>
+ </body>
+ </html>

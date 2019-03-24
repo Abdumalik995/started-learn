@@ -39,6 +39,10 @@ $g = array('dushanba', 'seshanba', 'chorshanba', 'pay', 'juma');*/
 
 //$s = $a*$a;
 //echo "kvadratning yuzi ".$s."<br> kvadratning perimetri ".$pp;
+$g = array('1'=>'dushanba','2'=>'seshanba','3'=>'chorshanba');
+print_r($g);
+$d = array_flip($g);
+print_r($d);
 $r = 5;
 define ("PI","3.14");
 $da = pow($r, 5);
