@@ -81,14 +81,14 @@ $massiv2 = array(array('Monitor','LG','100$','4'),
     		<th>Soni</th>
     		<?php foreach ($massiv1 as $key => $value) { ?>    			
     		<tr>
-                <?php foreach ($value as $ke => $vall) { ?>
+                <!-- <?php foreach ($value as $ke => $vall) { ?>
                 <td><?php echo $vall; ?></td>
                     
-                 <?php } ?>
-    			<!-- <td><?php echo $value['Nomi']; ?></td>
+                 <?php } ?> -->
+    			<td><?php echo $value['Nomi']; ?></td>
     			<td><?php echo $value['Modeli']; ?></td>
     			<td><?php echo $value['Narxi']; ?></td>
-    			<td><?php echo $value['Soni']; ?></td>  -->   			
+    			<td><?php echo $value['Soni']; ?></td>    			
     		</tr>
     	<?php } ?>
     	</table>
