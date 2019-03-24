@@ -1,8 +1,8 @@
 <?php 
-$friends = array(array('ismi'=>'Muh','yoshi'=>'24','kasbi'=>'mebelchi'),
+$friends = array(array('ismi'=>'Muhiddin','yoshi'=>'24','kasbi'=>'mebelchi'),
 	array('ismi'=>'Islom','yoshi'=>'23','kasbi'=>'fermer'),
 	array('ismi'=>'Sherzod','yoshi'=>'23','kasbi'=>'Shafyor'),
-	array('ismi'=>'Zafar', 'yoshi'=>'24','kasbi'=>'Chorvador'),
+	array('ismi'=>'Zafar', 'yoshi'=>'24','kasbi'=>'Chorvachi'),
 	array('ismi'=>'Otash', 'yoshi'=>'24','kasbi'=>'Loyihalovchi'));
 //print_r($friends);
 
@@ -52,9 +52,14 @@ $friends = array(array('ismi'=>'Muh','yoshi'=>'24','kasbi'=>'mebelchi'),
     		
     		<?php foreach ($friends as  $value) { ?>    			
     		<tr>
-    			<td><?php echo $value['ismi']; ?></td>
+                <?php foreach ($value as $val) { ?>
+                    <td><?php echo $val ?></td>
+                        <?php } ?>
+                   
+                 
+    			<!-- <td><?php echo $value['ismi']; ?></td>
     			<td><?php echo $value['yoshi']; ?></td>
-    			<td><?php echo $value['kasbi']; ?></td>
+    			<td><?php echo $value['kasbi']; ?></td> -->
     			   			
     		</tr>
     		<?php } ?>

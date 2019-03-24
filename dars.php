@@ -43,14 +43,15 @@ $g = array('dushanba', 'seshanba', 'chorshanba', 'pay', 'juma');*/
 //echo "kvadratning yuzi ".$s."<br> kvadratning perimetri ".$pp;
 $g = array('1'=>'dushanba','2'=>'seshanba','3'=>'chorshanba');
 print_r($g);
+echo '<br>';
 $d = array_flip($g);
 print_r($d);
-$r = 5;
+//$r = 5;
 define ("PI","3.14");
 $da = pow($r, 5);
 $s = PI*($r*$r);
 //echo $s;
-echo $da;
+//echo $da;
 // php veb hosting xizmatidan yoki web serverdan foydalanishimiz mumkin. Bunda web hostimiz phpni qullaydigan bo'lsa web host o'zi yetarli.
 
 ?>

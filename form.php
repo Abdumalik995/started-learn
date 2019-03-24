@@ -83,7 +83,7 @@
 	// } else {
 	// 	echo "Qiymat Mavjud emas";
 	// }
-	print_r($_POST);
-	define("MEN", 'meni ismim');
+	//print_r($_POST);
+	//define("MEN", 'meni ismim');
 	
  ?>
