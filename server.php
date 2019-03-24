@@ -39,6 +39,7 @@ $matn1 = "<h1>Ma\'lumot 'o\'rnida'</h1><br>";
 echo htmlspecialchars($matn1, ENT_COMPAT);
 echo htmlspecialchars($matn1, ENT_QUOTES);
 echo htmlspecialchars($matn1, ENT_NOQUOTES);
+//echo htmlspecialchars($matn1, ENT_NOQUOTES); html taglarni brauzer uqimasligi ularni kodga aylantirib ketishi
 //echo stripcslashes($matn1);
 /*=====*/
 /*function ekub($x, $y) {
