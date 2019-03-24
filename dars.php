@@ -24,7 +24,9 @@ $g = array('dushanba', 'seshanba', 'chorshanba', 'pay', 'juma');*/
 //echo var_dump($g);
 // echo $c+$h;
 // $a=10;
-// $b=$a++;
+// $a++;
+// $b=$a;
+// echo $b;
 // $c=$a--;
 // echo $c;
 // $b = 5;
