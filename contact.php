@@ -9,15 +9,30 @@ function qiymat($a) {
     $fam = $_POST['fio'];
     $mail = $_POST['mail'];
     $content = $_POST['text'];
-    $name = qiymat($name);
-    $fam = qiymat($fam);
+    
+    
     $mail = qiymat($mail);
     $content = qiymat($content);
+
 
     echo "$name","<br>";
     echo "$fam","<br>";
     echo "$mail","<br>";
     echo "$content","<br>";
+
+    if (!empty($name)) {
+        $name = qiymat($name);
+    }else {
+         $xatolik1 = "Ism kiritilmagan!";
+    }
+    if (!empty($fam)) {
+        $fam = qiymat($fam);
+    }else {
+         $xatolik2 = "Familiya kiritilmagan!";
+    }
+    if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        $xatolik3 = "Email xato";
+    }
    } else {
     echo "-";
    }
@@ -70,16 +85,17 @@ function qiymat($a) {
 <body>
 
 	<div id="mail">
-		
-			<h3>Talk to <span>me</span></h3>
+					<h3>Talk to <span>me</span></h3>
 			<form id="form" action="#" method="post">
             <input type="text" name="name" placeholder="full name here">
 			<input type="text" name="fio" placeholder=" here">
-			<input type="mail" name="mail" name="mail" placeholder="email here">
-			<textarea style="height: 100px" name="text" placeholder="Type here"></textarea><br>
-			
+			<input type="email" name="mail" name="mail" placeholder="email here">
+			<textarea style="height: 100px" name="text" placeholder="Type here"></textarea><br>			
 			<input id="sub" type="submit" name="submit" value="SUBSCRIBE">
 		</form>
+        
 		</div>
+        <h2 style="color:red"><?php echo "$xatolik1 <br>","$xatolik2", "$xatolik3"; ?></h2>
+
 </body>
 </html>
