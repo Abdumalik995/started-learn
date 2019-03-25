@@ -1,5 +1,26 @@
 <?php 
-    
+function qiymat($a) {
+    $a = trim($a);
+    $a = strip_tags($a);
+    return $a;
+}
+   if ($_POST['submit']) {
+    $name = $_POST['name'];
+    $fam = $_POST['fio'];
+    $mail = $_POST['mail'];
+    $content = $_POST['text'];
+    $name = qiymat($name);
+    $fam = qiymat($fam);
+    $mail = qiymat($mail);
+    $content = qiymat($content);
+
+    echo "$name","<br>";
+    echo "$fam","<br>";
+    echo "$mail","<br>";
+    echo "$content","<br>";
+   } else {
+    echo "-";
+   }
  ?>
 <!DOCTYPE html>
 <html>
@@ -51,13 +72,13 @@
 	<div id="mail">
 		
 			<h3>Talk to <span>me</span></h3>
-			<form id="form" action="#">
-            <input type="text" name="text" name="name" placeholder="full name here">
-			<input type="text" name="text" name="fio" placeholder=" here">
-			<input type="email" name="mail" name="mail" placeholder="email here">
+			<form id="form" action="#" method="post">
+            <input type="text" name="name" placeholder="full name here">
+			<input type="text" name="fio" placeholder=" here">
+			<input type="mail" name="mail" name="mail" placeholder="email here">
 			<textarea style="height: 100px" name="text" placeholder="Type here"></textarea><br>
 			
-			<input id="sub" type="submit" name="same" name="yub" value="SUBSCRIBE">
+			<input id="sub" type="submit" name="submit" value="SUBSCRIBE">
 		</form>
 		</div>
 </body>
