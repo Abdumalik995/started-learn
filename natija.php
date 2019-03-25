@@ -5,7 +5,7 @@
 	$javob2 = $_SESSION['javob2'];
 	$javob1 = $_SESSION['javob1'];
 
-	if ($javob1 == 7 && $javob2 == 7 && $javob3 == 12) {
+	if ($javob1 == 12 && $javob2 == 7 && $javob3 == 12) {
 		echo "Javoblar to'g'ri";
 	} else {
 		echo "Javoblarda xatolik bor";

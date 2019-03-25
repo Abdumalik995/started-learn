@@ -1,3 +1,6 @@
+<?php 
+    
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +52,8 @@
 		
 			<h3>Talk to <span>me</span></h3>
 			<form id="form" action="#">
-			<input type="text" name="text" name="name" placeholder="full name here">
+            <input type="text" name="text" name="name" placeholder="full name here">
+			<input type="text" name="text" name="fio" placeholder=" here">
 			<input type="email" name="mail" name="mail" placeholder="email here">
 			<textarea style="height: 100px" name="text" placeholder="Type here"></textarea><br>
 			

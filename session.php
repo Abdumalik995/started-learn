@@ -7,7 +7,7 @@ print_r($_SESSION).'<br>';
 //print_r($_SESSION);
 //session_unset($_SESSION['a']);// qiymatlarni o'chirish
 //print_r($_SESSION);
-//session_destroy()//sessionni tugatish
+session_destroy()//sessionni tugatish
  ?>
 
  <!DOCTYPE html>
