@@ -1,6 +1,60 @@
-<?php 
+<?php     
+    // define variables and set to empty values
+    $nameErr = $emailErr = $genderErr = $websiteErr = "";
+    $name = $email = $gender = $comment = $website = "";
 
- ?>
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      if (empty($_POST["name"])) {
+        $nameErr = "Ism kiritilmadi";
+      } else {
+        $name = test_input($_POST["name"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+          $nameErr = "Ism faqat harflardan iborat bo`lishi mumkin"; 
+        }
+      }
+      
+      if (empty($_POST["mail"])) {
+        $emailErr = "Email manzilingizni kiriting";
+      } else {
+        $email = test_input($_POST["mail"]);
+        // check if e-mail address is well-formed
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          $emailErr = "Xato! Email manzil."; 
+        }
+      }
+        
+      if (empty($_POST["website"])) {
+        $website = "";
+      } else {
+        $website = test_input($_POST["website"]);
+        // check if URL address syntax is valid
+        if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+          $websiteErr = "Xato: Website."; 
+        }    
+      }
+
+      if (empty($_POST["comment"])) {
+        $comment = "";
+      } else {
+        $comment = test_input($_POST["comment"]);
+      }
+
+      if (empty($_POST["gender"])) {
+        $genderErr = "Gender is required";
+      } else {
+        $gender = test_input($_POST["gender"]);
+      }
+    }
+
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +66,10 @@
     margin: auto;
     margin-top: 50px;
     padding-top: 20px;
+    padding-left: 100px;
     width: 80%;
-    height: 500px;
-    text-align: center;
+    height: 600px;
+    /*text-align: center;*/
     background: #fff;
     box-shadow: 0px 0px 10px #efe8e8;
     overflow: hidden;
@@ -29,6 +84,7 @@
     padding-left: 20px;
     border: none;
     border-radius: 3px;
+    
 	}
 	#mail>form>textarea {
     padding-top: 7px;
@@ -45,21 +101,59 @@
     box-shadow: 0px 0px 10px #7b7474;
     cursor: pointer;
 	}
+    h1 {
+        text-align: center;
+    }
+    h1 span {
+        color: crimson;
+    }
+    .red {
+        color: red;
+    }
+    input[type="radio"] {
+        width: 20px !important;
+        
+
+    }
 </style>
 <body>
 
 	<div id="mail">
-					<h3>Talk to <span>me</span></h3>
+			<h1>Talk to <span> me </span></h1>
+            <p><span class="red"> * </span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
 			<form id="form" action="#" method="post">
             <input type="text" name="name" placeholder="full name here">
-			<input type="text" name="fio" placeholder=" here">
-			<input type="email" name="mail" name="mail" placeholder="email here">
-			<textarea style="height: 100px" name="text" placeholder="Type here"></textarea><br>			
+            <span class="red"> * <?php echo $nameErr;?></span>
+            <br>			
+			<input type="text" name="mail" placeholder="email here">
+            <span class="red"> * <?php echo $emailErr;?></span>
+            <br>
+            <input type="text" name="website" placeholder="URL here">
+            <span class="red"> * <?php echo $websiteErr;?></span>
+            <br><br>
+			<textarea style="height: 100px" name="comment" placeholder="Type here"></textarea><br>
+            <p>Gender:
+            <input type="radio" name="gender" value="female">Female
+            <input type="radio" name="gender" value="male">Male
+            <span class="red">* <?php echo $genderErr;?></span>
+            <br></p>			
 			<input id="sub" type="submit" name="submit" value="SUBSCRIBE">
 		</form>
         
 		</div>
-        <h2 style="color:red"><?php echo "$xatolik1 <br>","$xatolik2", "$xatolik3"; ?></h2>
+<?php
+    echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
+    echo $name;
+    echo "<br>";
+    echo $email;
+    echo "<br>";
+    echo $website;
+    echo "<br>";
+    echo $comment;
+    echo "<br>";
+    echo $gender;
+?>
+        
 
 </body>
 </html>

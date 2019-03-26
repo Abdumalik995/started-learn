@@ -4,6 +4,7 @@ function qiymat($a) {
     $a = strip_tags($a);
     return $a;
 }
+
    if ($_POST['submit']) {
     $name = $_POST['name'];
     $fam = $_POST['fio'];
@@ -89,7 +90,7 @@ function qiymat($a) {
 			<form id="form" action="#" method="post">
             <input type="text" name="name" placeholder="full name here">
 			<input type="text" name="fio" placeholder=" here">
-			<input type="email" name="mail" name="mail" placeholder="email here">
+			<input type="email" name="mail" placeholder="email here">
 			<textarea style="height: 100px" name="text" placeholder="Type here"></textarea><br>			
 			<input id="sub" type="submit" name="submit" value="SUBSCRIBE">
 		</form>
