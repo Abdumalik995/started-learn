@@ -64,14 +64,14 @@
 	#mail {
     position: relative;
     margin: auto;
-    margin-top: 50px;
-    padding-top: 20px;
+    margin-top: 30px;
+    padding-top: 10px;
     padding-left: 100px;
-    width: 80%;
+    width: 70%;
     height: 600px;
     /*text-align: center;*/
     background: #fff;
-    box-shadow: 0px 0px 10px #efe8e8;
+    box-shadow: 0px 0px 10px #222;
     overflow: hidden;
 	}
 	#mail>form>input, #mail>form>textarea {
@@ -84,13 +84,13 @@
     padding-left: 20px;
     border: none;
     border-radius: 3px;
-    
+
 	}
 	#mail>form>textarea {
     padding-top: 7px;
 	}
 	#mail>form>#sub {
-    margin-top: 25px;
+    margin-top: 20px;
     margin-bottom: 70px;
     width: 170px;
     height: 45px;
@@ -115,6 +115,7 @@
         
 
     }
+    
 </style>
 <body>
 
@@ -137,22 +138,24 @@
             <input type="radio" name="gender" value="male">Male
             <span class="red">* <?php echo $genderErr;?></span>
             <br></p>			
-			<input id="sub" type="submit" name="submit" value="SUBSCRIBE">
+			<input id="sub" type="submit" value="SUBSCRIBE">
 		</form>
         
 		</div>
-<?php
-    echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
-    echo $name;
-    echo "<br>";
-    echo $email;
-    echo "<br>";
-    echo $website;
-    echo "<br>";
-    echo $comment;
-    echo "<br>";
-    echo $gender;
-?>
+    <div style="width:50%; margin-left:100px">
+        <?php
+            echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
+            echo $name;
+            echo "<br>";
+            echo $email;
+            echo "<br>";
+            echo $website;
+            echo "<br>";
+            echo $comment;
+            echo "<br>";
+            echo $gender;
+        ?>    
+    </div>
         
 
 </body>
