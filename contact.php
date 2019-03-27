@@ -15,7 +15,6 @@ function qiymat($a) {
     $mail = qiymat($mail);
     $content = qiymat($content);
 
-
     echo "$name","<br>";
     echo "$fam","<br>";
     echo "$mail","<br>";
@@ -86,7 +85,7 @@ function qiymat($a) {
 <body>
 
 	<div id="mail">
-					<h3>Talk to <span>me</span></h3>
+			<h3>Talk to <span>me</span></h3>
 			<form id="form" action="#" method="post">
             <input type="text" name="name" placeholder="full name here">
 			<input type="text" name="fio" placeholder=" here">
