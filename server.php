@@ -40,7 +40,8 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select name, surname, adress, id from talabalar order by name desc limit 5 // teskari tartiblash nameni
 // select name, surname, adress from talabalar where adress="Tashkent" || adress="Buxoro"// yoki orqali chiqarish
 // INSERT INTO talabalar (name, surname, adress) VALUES ('Malik','Botirov','Jizzax' );select * from talabalar // qushish
-//
+// DELETE FROM talabalar where id="1";SELECT * From talabalar // o'chirish berilgan qiymat buyicha
+
 // 
 
 
