@@ -42,7 +42,11 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // INSERT INTO talabalar (name, surname, adress) VALUES ('Malik','Botirov','Jizzax' );select * from talabalar // qushish
 // DELETE FROM talabalar where id="1";SELECT * From talabalar // o'chirish berilgan qiymat buyicha
 
-// 
+// UPDATE talabalar SET name="Anvar",surname="Botirov"where id="9";select * from talabalar // uzgartirish
+  
+
+
+
 
 
 echo floor(-1.9)."<br>";
