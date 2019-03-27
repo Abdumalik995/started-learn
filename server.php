@@ -33,6 +33,17 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 
 // select count(adress) as manzil from talabalar where adress="Buxoro" // soni bo'yicha aynan toshkentliklar
 // select distinct adress from talabalar // Qaysi adresslar buyicha malumotlar borligi
+// select name, surname, adress from talabalar limit 3// berilgan qiymat buyicha limitni chiqarish
+// select name, surname, adress, id from talabalar where id>7 limit 3
+// select name, surname, adress, id from talabalar order by name limit 3 // tartiblash
+// select name, surname, adress, id from talabalar order by name, surname limit 5 // tartiblash name buyicha
+// select name, surname, adress, id from talabalar order by name desc limit 5 // teskari tartiblash nameni
+// select name, surname, adress from talabalar where adress="Tashkent" || adress="Buxoro"// yoki orqali chiqarish
+// INSERT INTO talabalar (name, surname, adress) VALUES ('Malik','Botirov','Jizzax' );select * from talabalar // qushish
+//
+// 
+
+
 echo floor(-1.9)."<br>";
 echo floor(1.9)."<br>";
 echo ceil(-1.9)."<br>";
