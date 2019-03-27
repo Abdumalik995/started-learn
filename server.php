@@ -43,9 +43,10 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // DELETE FROM talabalar where id="1";SELECT * From talabalar // o'chirish berilgan qiymat buyicha
 
 // UPDATE talabalar SET name="Anvar",surname="Botirov"where id="9";select * from talabalar // uzgartirish
-  
-
-
+// select name as ismi case when nomer is null then 'yo`q' else nomer as 'telefon nomerlari' from talabalar
+// select max(id) from talabalar where adress="Buxoro" // buxorolik bo'lgan id si eng yuqori
+// SELECT a.name, b.name from a.talabalar, b.yunalish
+// select name, case when nomer is null then 'yo`q' else nomer End from talabalar
 
 
 
