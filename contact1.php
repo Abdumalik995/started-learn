@@ -10,7 +10,7 @@
         $name = test_input($_POST["name"]);
         // check if name only contains letters and whitespace
         if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-          $nameErr = "Ism faqat harflardan iborat bo`lishi mumkin"; 
+          $nameErr = "Ismda faqat harflar va probel bo`lishi mumkin"; 
         }
       }
       
@@ -23,6 +23,9 @@
           $emailErr = "Xato! Email manzil."; 
         }
       }
+      if (!is_numeric($_POST['password'])) {
+            $passwordErr = "Faqat raqam kiriting";
+        }
         
       if (empty($_POST["website"])) {
         $website = "";
@@ -58,9 +61,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contact php</title>
+	<title>Contact1 php</title>
 </head>
 <style type="text/css">
+    
 	#mail {
     position: relative;
     margin: auto;
@@ -68,7 +72,7 @@
     padding-top: 10px;
     padding-left: 100px;
     width: 70%;
-    height: 600px;
+    height: 650px;
     /*text-align: center;*/
     background: #fff;
     box-shadow: 0px 0px 10px #222;
@@ -115,6 +119,12 @@
         
 
     }
+    #comment {
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        padding:25px 10px;
+        border-radius: 5px;
+    }
     
 </style>
 <body>
@@ -129,10 +139,13 @@
 			<input type="text" name="mail" placeholder="email here">
             <span class="red"> * <?php echo $emailErr;?></span>
             <br>
+            <input type="text" name="password" placeholder="password here">
+            <span class="red"> * <?php echo $passwordErr;?></span>
+            <br>
             <input type="text" name="website" placeholder="URL here">
             <span class="red"> * <?php echo $websiteErr;?></span>
             <br><br>
-			<textarea style="height: 100px" name="comment" placeholder="Type here"></textarea><br>
+			<textarea style="height: 50px" name="comment" placeholder="Type here"></textarea><br>
             <p>Gender:
             <input type="radio" name="gender" value="female">Female
             <input type="radio" name="gender" value="male">Male
@@ -151,7 +164,7 @@
             echo "<br>";
             echo $website;
             echo "<br>";
-            echo $comment;
+            echo "<div id='comment'>".$comment."</div>";
             echo "<br>";
             echo $gender;
         ?>    
