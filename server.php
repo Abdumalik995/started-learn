@@ -32,7 +32,7 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select concat(name,' ', surname) as "ism familiya", adress as manzil from talabalar where adress="Tashkent"
 
 // select count(adress) as manzil from talabalar where adress="Buxoro" // soni bo'yicha aynan Buxoroliklar
-// select distinct adress from talabalar // Qaysi adresslar buyicha malumotlar borligi
+// select distinct adress from talabalar // Qaysi adresslar buyicha ma'lumotlar (talabalar) borligi
 // select name, surname, adress from talabalar limit 3// berilgan qiymat buyicha limitni chiqarish
 // select name, surname, adress, id from talabalar where id>7 limit 3
 // select name, surname, adress, id from talabalar order by name limit 3 // tartiblash
