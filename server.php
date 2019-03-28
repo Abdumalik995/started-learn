@@ -40,10 +40,10 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select name, surname, adress, id from talabalar order by name desc limit 5 // teskari tartiblash nameni
 // select name, surname, adress from talabalar where adress="Tashkent" || adress="Buxoro"// yoki (or) operatori orqali chiqarish
 // INSERT INTO talabalar (name, surname, adress) VALUES ('Malik','Botirov','Jizzax' );select * from talabalar // qushish
-// DELETE FROM talabalar where id="1";SELECT * From talabalar // o'chirish berilgan qiymat buyicha
+// DELETE FROM talabalar where id="1"; SELECT * From talabalar // o'chirish berilgan qiymat buyicha
 
 // UPDATE talabalar SET name="Anvar",surname="Botirov"where id="9";select * from talabalar // uzgartirish
-// select name as ismi case when nomer is null then 'yo`q' else nomer as 'telefon nomerlari' from talabalar
+// select name as ismi case when nomer is null then 'yo`q' else nomer as 'telefon nomerlari' from talabalar // xatolik ...
 // select max(id) from talabalar where adress="Buxoro" // buxorolik bo'lgan id si eng yuqori
 // SELECT a.name, b.name from a.talabalar, b.yunalish
 // select name, case when nomer is null then 'yo`q' else nomer End from talabalar // case oraqli qiymati null bulan ma'lumotni topish
