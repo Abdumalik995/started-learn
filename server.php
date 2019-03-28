@@ -31,7 +31,7 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select name, davlat, narxi  from salon1 where yil>"2019-02-10"
 // select concat(name,' ', surname) as "ism familiya", adress as manzil from talabalar where adress="Tashkent"
 
-// select count(adress) as manzil from talabalar where adress="Buxoro" // soni bo'yicha aynan toshkentliklar
+// select count(adress) as manzil from talabalar where adress="Buxoro" // soni bo'yicha aynan Buxoroliklar
 // select distinct adress from talabalar // Qaysi adresslar buyicha malumotlar borligi
 // select name, surname, adress from talabalar limit 3// berilgan qiymat buyicha limitni chiqarish
 // select name, surname, adress, id from talabalar where id>7 limit 3
