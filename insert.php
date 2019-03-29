@@ -1,6 +1,6 @@
 <?php 
 	include "baza.php";
-	
+
 
 // define variables and set to empty values
     $nameErr = $surnameErr = $adressErr = $nomerErr = "";
@@ -60,7 +60,7 @@
     }
 
     
-            echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
+            /*echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
             echo $name;
             echo "<br>";
             echo $surname;
@@ -71,7 +71,27 @@
             echo "<br>";
             echo $datee;
             echo "<br>";
-            echo $yunalish;
+            echo $yunalish;*/
+            $name = $_POST['name'];
+            $surname = $_POST['surname'];
+            $nomer = $_POST['nomer'];
+            $adress = $_POST['adress'];
+            $datee = $_POST['datee'];
+            $yunalish = $_POST['yunalish'];
         
-       
+       $query = "INSERT INTO talabalar (name, surname,  nomer, adress, datee, yunalish_id) VALUES ('$name', '$surname', '$nomer', '$adress', '$datee', '$yunalish')";
+
+       $result = mysqli_query($connect, $query);
+
+       if($result) {
+       	echo "yozildi";
+       } else {
+       	echo "yozilmadi";
+       }
+       $query1 = ""
+
+       $sql = "SELECT * FROM talabalar";
+
+
  ?>
+ 	<table></table>
