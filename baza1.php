@@ -1,7 +1,7 @@
 <?php     
     // define variables and set to empty values
-    $nameErr = $emailErr = $genderErr = $websiteErr = "";
-    $name = $email = $gender = $comment = $website = "";
+    $nameErr = $surnameErr = $adressErr = $nomerErr = "";
+    $name = $surname = $adress = $nomer = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty($_POST["name"])) {
@@ -13,41 +13,34 @@
           $nameErr = "Ismda faqat harflar va probel bo`lishi mumkin"; 
         }
       }
+      if (empty($_POST["surname"])) {
+        $surnameErr = "Familiya kiritilmadi";
+      } else {
+        $surname = test_input($_POST["surname"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+          $surnameErr = "Ismda faqat harflar va probel bo`lishi mumkin"; 
+        }
+      }     
+
+      if (empty($_POST["adress"])) {
+        $adress = "";
+      } else {
+        $adress = test_input($_POST["adress"]);
+      }
+
+      if (empty($_POST["nomer"])) {
+        $nomer = "";
+      } else {
+        $nomer = test_input($_POST["nomer"]);
+      }
+      if (empty($_POST["datee"])) {
+        $datee = "";
+      } else {
+        $datee = test_input($_POST["datee"]);
+      }
+
       
-      if (empty($_POST["mail"])) {
-        $emailErr = "Email manzilingizni kiriting";
-      } else {
-        $email = test_input($_POST["mail"]);
-        // check if e-mail address is well-formed
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $emailErr = "Xato! Email manzil."; 
-        }
-      }
-      if (!is_numeric($_POST['password'])) {
-            $passwordErr = "Faqat raqam kiriting";
-        }
-        
-      if (empty($_POST["website"])) {
-        $website = "";
-      } else {
-        $website = test_input($_POST["website"]);
-        // check if URL address syntax is valid
-        if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-          $websiteErr = "Xato: Website."; 
-        }    
-      }
-
-      if (empty($_POST["comment"])) {
-        $comment = "";
-      } else {
-        $comment = test_input($_POST["comment"]);
-      }
-
-      if (empty($_POST["gender"])) {
-        $genderErr = "Gender is required";
-      } else {
-        $gender = test_input($_POST["gender"]);
-      }
     }
 
     function test_input($data) {
@@ -130,27 +123,34 @@
 <body>
 
 	<div id="mail">
+        <div></div>
 			<h1>Talk to <span> me </span></h1>
             <p><span class="red"> * </span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
 			<form id="form" action="#" method="post">
-            <input type="text" name="name" placeholder="full name here">
+            <input type="text" name="name" placeholder="name here">
             <span class="red"> * <?php echo $nameErr;?></span>
             <br>			
-			<input type="text" name="mail" placeholder="email here">
-            <span class="red"> * <?php echo $emailErr;?></span>
+			<input type="text" name="surname" placeholder="surname here">
+            <span class="red"> * <?php echo $surnameErr;?></span>
             <br>
-            <input type="text" name="password" placeholder="password here">
-            <span class="red"> * <?php echo $passwordErr;?></span>
+            <input type="text" name="adress" placeholder="adress here">
+            <span class="red">  <?php echo $adressErr;?></span>
             <br>
-            <input type="text" name="website" placeholder="URL here">
-            <span class="red"> * <?php echo $websiteErr;?></span>
+            <input type="text" name="nomer" placeholder="Phone number here">
+            <span class="red">  <?php echo $nomerErr;?></span>
             <br><br>
-			<textarea style="height: 50px" name="comment" placeholder="Your message here"></textarea><br>
-            <p>Gender:
-            <input type="radio" name="gender" value="female">Female
-            <input type="radio" name="gender" value="male">Male
-            <span class="red">* <?php echo $genderErr;?></span>
-            <br></p>			
+            <input type="date" name="datee" placeholder="Date here">
+            <span class="red">  <?php echo $dateErr;?></span>
+            <br><br>
+            Fakultetni tanlang:<select name="yunalish">
+                <option></option>
+                <option value="1">KIF</option>
+                <option value="2">Telekom</option>
+                <option value="3">Dasturiy</option>
+                <option value="4">Aloqala</option>
+                <option value="5">Radio va mobil</option>
+            </select> <br>
+						
 			<input id="sub" type="submit" value="SUBSCRIBE">
 		</form>
         
@@ -160,13 +160,13 @@
             echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
             echo $name;
             echo "<br>";
-            echo $email;
+            echo $surname;
             echo "<br>";
-            echo $website;
+            echo $adress;
             echo "<br>";
-            echo "<div id='comment'>".$comment."</div>";
+            echo $nomer;
             echo "<br>";
-            echo $gender;
+        
         ?>    
     </div>
         
