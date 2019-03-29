@@ -43,7 +43,7 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // INSERT INTO talabalar (name, surname, adress) VALUES ('Malik','Botirov','Jizzax' );select * from talabalar // qushish
 // DELETE FROM talabalar where id="1"; SELECT * From talabalar // o'chirish berilgan qiymat buyicha
 
-// UPDATE talabalar SET name="Anvar",surname="Botirov" where id="9"; select * from talabalar // uzgartirish
+// UPDATE talabalar SET name="Anvar",surname="Botirov" where id="9"; select * from talabalar // uzgartirish yangilinish qushish
 
 // select max(id) from talabalar where adress="Buxoro" // buxorolik bo'lgan id si eng yuqori
 // SELECT a.name, b.name from a.talabalar, b.yunalish
