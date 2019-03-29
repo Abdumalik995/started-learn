@@ -1,5 +1,5 @@
 <?php     
-    // define variables and set to empty values
+    /*// define variables and set to empty values
     $nameErr = $surnameErr = $adressErr = $nomerErr = "";
     $name = $surname = $adress = $nomer = "";
 
@@ -48,7 +48,7 @@
       $data = stripslashes($data);
       $data = htmlspecialchars($data);
       return $data;
-    }
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -126,7 +126,7 @@
         <div></div>
 			<h1>Talk to <span> me </span></h1>
             <p><span class="red"> * </span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
-			<form id="form" action="#" method="post">
+			<form id="form" action="insert.php" method="post">
             <input type="text" name="name" placeholder="name here">
             <span class="red"> * <?php echo $nameErr;?></span>
             <br>			
@@ -151,23 +151,12 @@
                 <option value="5">Radio va mobil</option>
             </select> <br>
 						
-			<input id="sub" type="submit" value="SUBSCRIBE">
+			<input id="sub" type="submit" name="submit" value="SUBSCRIBE">
 		</form>
         
 		</div>
     <div style="width:50%; margin-left:100px">
-        <?php
-            echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
-            echo $name;
-            echo "<br>";
-            echo $surname;
-            echo "<br>";
-            echo $adress;
-            echo "<br>";
-            echo $nomer;
-            echo "<br>";
-        
-        ?>    
+          
     </div>
         
 

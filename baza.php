@@ -6,9 +6,9 @@
 	 $connect = @mysql_connect(DBHOST,DBUSER,DBPASSWORD,DBNAME);
 
 	 if (!$connect) {
-	 	echo 'bazaga ulanmadi';
+	 	echo 'bazaga ulanmadi <br>';
 	 	
 	 } else {
-	 	echo 'bazaga ulandi';
+	 	echo 'bazaga ulandi <br>';
 	 }
  ?>
