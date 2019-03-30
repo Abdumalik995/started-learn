@@ -98,11 +98,29 @@
        	echo "no deleted";
        }*/
        $sql = "SELECT * FROM talabalar";
-
-       while($row = mysql_fetch_assoc($sql)) {
-       	echo $row['name'];
-       }
+       $res = mysqli_query($connect, $sql);
+       $talabalar = array();
+       while($row = mysqli_fetch_assoc($res)) {
+       	
+       } 
 
 
  ?>
- 	<table></table>
+ 	<table border="1">
+    		
+    		
+    		<?php foreach ($talabalar as  $talaba) { ?>    			
+    		<tr>
+                <?php foreach ($value as $val) { ?>
+                    <td><?php echo $val ?></td>
+                        <?php } ?>
+                   
+                 
+    			<!-- <td><?php echo $value['ismi']; ?></td>
+    			<td><?php echo $value['yoshi']; ?></td>
+    			<td><?php echo $value['kasbi']; ?></td> -->
+    			   			
+    		</tr>
+    		<?php } ?>
+    	
+    	</table>
