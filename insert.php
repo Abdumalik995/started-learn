@@ -101,17 +101,25 @@
        $res = mysqli_query($connect, $sql);
        $talabalar = array();
        while($row = mysqli_fetch_assoc($res)) {
-       	
+       	$talabalar[] = $row;
        } 
-
+      
 
  ?>
  	<table border="1">
-    		
+    		<tr>
+    			<th>Id</th>
+    			<th>NAME</th>
+    			<th>SURNAME</th>
+    			<th>ADRESS</th>
+    			<th>NOMER</th>
+    			<th>DATEE</th>
+    			<th>YUNALISH_ID</th>
+    		</tr>
     		
     		<?php foreach ($talabalar as  $talaba) { ?>    			
     		<tr>
-                <?php foreach ($value as $val) { ?>
+                <?php foreach ($talaba as $val) { ?>
                     <td><?php echo $val ?></td>
                         <?php } ?>
                    
