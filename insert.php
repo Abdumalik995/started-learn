@@ -26,6 +26,11 @@
         if (!preg_match("/^[a-zA-Z ]*$/",$surname)) {
           echo "Familiya faqat harflar va probel bo`lishi mumkin <br>"; 
         }
+      } 
+      if (empty($_POST["jinsi"])) {
+        $jinsiErr = "";
+      } else {
+        $jinsi = test_input($_POST["jinsi"]);
       }     
 
       if (empty($_POST["adress"])) {
@@ -80,7 +85,7 @@
             $datee = $_POST['datee'];
             $yunalish = $_POST['yunalish'];*/
         
-       $query = "INSERT INTO talabalar (name, surname,  nomer, adress, datee, yunalish_id) VALUES ('$name', '$surname', '$nomer', '$adress', '$datee', '$yunalish')";
+       $query = "INSERT INTO talabalar (name, surname, jinsi, nomer, adress, datee, yunalish_id) VALUES ('$name', '$surname', '$jinsi','$nomer', '$adress', '$datee', '$yunalish')";
 
        $result = mysqli_query($connect, $query);
 
@@ -112,6 +117,7 @@
     			<th>Id</th>
     			<th>NAME</th>
     			<th>SURNAME</th>
+    			<th>JINSI</th>
     			<th>ADRESS</th>
     			<th>NOMER</th>
     			<th>DATEE</th>

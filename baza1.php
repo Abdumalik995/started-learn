@@ -55,7 +55,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contact1 php</title>
+	<title>baza1 php</title>
 </head>
 <style type="text/css">
     
@@ -142,6 +142,11 @@
             <input type="date" name="datee" placeholder="Date here">
             <span class="red">  <?php echo $dateErr;?></span>
             <br><br>
+            Jinsingiz: <select name="jinsi">
+                <option></option>
+                <option value="m">Man</option>
+                <option value="w">Women</option>
+            </select>
             Fakultetni tanlang:<select name="yunalish">
                 <option></option>
                 <option value="1">KIF</option>
