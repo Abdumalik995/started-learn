@@ -9,6 +9,7 @@
     if (isset($_POST['submit'])) {
       if (empty($_POST["name"]) || empty($_POST['surname'])) {
       	echo "Ism va Familiya to'ldirilishi shart <br>";
+
         //$nameErr = "Ism kiritilmadi";
       } else {
         $name = test_input($_POST["name"]);
@@ -115,6 +116,7 @@
     			<th>NOMER</th>
     			<th>DATEE</th>
     			<th>YUNALISH_ID</th>
+    			<th>EDIT</th>
     		</tr>
     		
     		<?php foreach ($talabalar as  $talaba) { ?>    			
@@ -122,7 +124,7 @@
                 <?php foreach ($talaba as $val) { ?>
                     <td><?php echo $val ?></td>
                         <?php } ?>
-                   
+                   	<td><a href="edit.php?id=<?=$talaba['id']?>">Edit</a></td>
                  
     			<!-- <td><?php echo $value['ismi']; ?></td>
     			<td><?php echo $value['yoshi']; ?></td>
