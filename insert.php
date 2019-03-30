@@ -83,14 +83,25 @@
 
        $result = mysqli_query($connect, $query);
 
-       if($result) {
-       	echo "yozildi";
+      /* if($result) {
+       	echo "yozildi <br>";
        } else {
        	echo "yozilmadi";
        }
-       $query1 = ""
+       $query1 = "DELETE FROM talabalar where id='18'";
+       $result1 = mysqli_query($connect, $query1);
 
+       if($result1) {
+       	echo "O`chirildi 1";
+       }
+       else {
+       	echo "no deleted";
+       }*/
        $sql = "SELECT * FROM talabalar";
+
+       while($row = mysql_fetch_assoc($sql)) {
+       	echo $row['name'];
+       }
 
 
  ?>
