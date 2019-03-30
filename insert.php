@@ -28,23 +28,23 @@
       }     
 
       if (empty($_POST["adress"])) {
-        $adress = "";
+        $adressErr = "";
       } else {
         $adress = test_input($_POST["adress"]);
       }
 
       if (empty($_POST["nomer"])) {
-        $nomer = "";
+        $nomerErr = "";
       } else {
         $nomer = test_input($_POST["nomer"]);
       }
       if (empty($_POST["datee"])) {
-        $datee = "";
+        $dateerr = "";
       } else {
         $datee = test_input($_POST["datee"]);
       }
       if (empty($_POST["yunalish"])) {
-        $yunalish = "";
+        $yunalishErr = "";
       } else {
         $yunalish = test_input($_POST["yunalish"]);
       }
@@ -72,12 +72,12 @@
             echo $datee;
             echo "<br>";
             echo $yunalish;*/
-            $name = $_POST['name'];
+           /* $name = $_POST['name'];
             $surname = $_POST['surname'];
             $nomer = $_POST['nomer'];
             $adress = $_POST['adress'];
             $datee = $_POST['datee'];
-            $yunalish = $_POST['yunalish'];
+            $yunalish = $_POST['yunalish'];*/
         
        $query = "INSERT INTO talabalar (name, surname,  nomer, adress, datee, yunalish_id) VALUES ('$name', '$surname', '$nomer', '$adress', '$datee', '$yunalish')";
 
@@ -106,7 +106,7 @@
       
 
  ?>
- 	<table border="1">
+ 	<table border="1" width="800">
     		<tr>
     			<th>Id</th>
     			<th>NAME</th>

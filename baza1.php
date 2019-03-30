@@ -1,11 +1,12 @@
 <?php     
-    /*// define variables and set to empty values
+    // define variables and set to empty values
     $nameErr = $surnameErr = $adressErr = $nomerErr = "";
     $name = $surname = $adress = $nomer = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty($_POST["name"])) {
         $nameErr = "Ism kiritilmadi";
+        header("Location: baza1.php");
       } else {
         $name = test_input($_POST["name"]);
         // check if name only contains letters and whitespace
@@ -39,7 +40,9 @@
       } else {
         $datee = test_input($_POST["datee"]);
       }
-
+      if(empty($name) || empty($surname) || empty($adress) || empty($nomer)) {
+        header("Location: baza1.php");
+      }
       
     }
 
@@ -48,7 +51,7 @@
       $data = stripslashes($data);
       $data = htmlspecialchars($data);
       return $data;
-    }*/
+    }
 ?>
 
 <!DOCTYPE html>
@@ -117,8 +120,7 @@
         border: 1px solid #ccc;
         padding:25px 10px;
         border-radius: 5px;
-    }
-    
+    }    
 </style>
 <body>
 
