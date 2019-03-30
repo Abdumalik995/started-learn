@@ -132,9 +132,7 @@
                         <?php } ?>
                    	<td><a href="edit.php?id=<?=$talaba['id']?>">Edit</a></td>
                  
-    			<!-- <td><?php echo $value['ismi']; ?></td>
-    			<td><?php echo $value['yoshi']; ?></td>
-    			<td><?php echo $value['kasbi']; ?></td> -->
+    			
     			   			
     		</tr>
     		<?php } ?>
