@@ -54,6 +54,8 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select name, datee from talabalar where datee=(select min(datee) from talabalar) // ruyhatdan eng yoshi kattasini aniqlovchi kod
 // select min(datee) as kun, name from talabalar; // eng katta yoshli 
 // select name, surname, datee from talabalar where datee between "1997-02-10" and "1999-01-10" // mana shu oraliqda tug'ilganlar
+// select concat(name, " ",surname) as FIO from talabalar where jinsi="w"; // jinsi buyicha topish...
+
 
  
 
