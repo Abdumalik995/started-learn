@@ -131,8 +131,6 @@
                     <td><?php echo $val ?></td>
                         <?php } ?>
                    	<td><a href="edit.php?id=<?=$talaba['id']?>">Edit</a></td>
-                 
-    			
     			   			
     		</tr>
     		<?php } ?>

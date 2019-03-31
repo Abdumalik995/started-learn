@@ -125,7 +125,7 @@
 	<div id="mail">
         <div></div>
 			<h1>Talk to <span> me </span></h1>
-            <p><span class="red"> * </span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
+            <p><span class="red">*</span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
 			<form id="form" action="insert.php" method="post">
             <input type="text" name="name" placeholder="name here">
             <span class="red"> * <?php echo $nameErr;?></span>

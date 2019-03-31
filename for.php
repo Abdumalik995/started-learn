@@ -57,7 +57,7 @@ for ($i=0; $i <= 10; $i++) {
 	
 	}
 	else {
-		echo 'x va y qiymat kiritilmadi <br> <a href="for.php?x=5&y=6"> Namuna sifatida havolani bosing</a><br>';
+		echo 'x va y qiymat kiritilmadi<br><a href="for.php?x=5&y=6"> Namuna sifatida havolani bosing</a><br>';
 	}
 
 
