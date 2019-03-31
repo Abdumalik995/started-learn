@@ -1,11 +1,11 @@
-<!-- <?php     
+<?php     
     // define variables and set to empty values
-    $nameErr = $surnameErr = $adressErr = $nomerErr = "";
+    /*$nameErr = $surnameErr = $adressErr = $nomerErr = "";
     $name = $surname = $adress = $nomer = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty($_POST["name"])) {
-        $nameErr = "Ism kiritilmadi";
+        $nameErr = "Ism kiritilmadi!";
         
       } else {
         $name = test_input($_POST["name"]);
@@ -15,17 +15,17 @@
         }
       }
       if (empty($_POST["surname"])) {
-        $surnameErr = "Familiya kiritilmadi";
+        $surnameErr = "Familiya kiritilmadi!";
       } else {
         $surname = test_input($_POST["surname"]);
         // check if name only contains letters and whitespace
         if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-          $surnameErr = "Ismda faqat harflar va probel bo`lishi mumkin"; 
+          $surnameErr = "Familiya faqat harflardan iborat bulishi mumkin!";
         }
       }     
 
       if (empty($_POST["adress"])) {
-        $adress = "";
+        $adressErr = "Manzilingizni kiriting";
       } else {
         $adress = test_input($_POST["adress"]);
       }
@@ -49,17 +49,17 @@
       $data = stripslashes($data);
       $data = htmlspecialchars($data);
       return $data;
-    }
-?> -->
+    }*/
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>baza1 php</title>
+    <title>bazap php</title>
 </head>
 <style type="text/css">
     
-	#mail {
+    #mail {
     position: relative;
     margin: auto;
     margin-top: 30px;
@@ -71,8 +71,8 @@
     background: #fff;
     box-shadow: 0px 0px 10px #222;
     overflow: hidden;
-	}
-	#mail>form>input, #mail>form>textarea {
+    }
+    #mail>form>input, #mail>form>textarea {
     margin-bottom: 20px;
     width: 50%;
     height: 40px;
@@ -83,11 +83,11 @@
     border: none;
     border-radius: 3px;
 
-	}
-	#mail>form>textarea {
+    }
+    #mail>form>textarea {
     padding-top: 7px;
-	}
-	#mail>form>#sub {
+    }
+    #mail>form>#sub {
     margin-top: 20px;
     margin-bottom: 70px;
     width: 170px;
@@ -98,7 +98,7 @@
     border: none;
     box-shadow: 0px 0px 10px #7b7474;
     cursor: pointer;
-	}
+    }
     h1 {
         text-align: center;
     }
@@ -122,31 +122,27 @@
 </style>
 <body>
 
-	<div id="mail">
+    <div id="mail">
         <div></div>
-			<h1>Talk to <span> me </span></h1>
+            <h1>Talk to <span> me </span></h1>
             <p><span class="red">*</span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
-			<form id="form" action="insert.php" method="post">
+            <form id="form" action="insert.php" method="post">
             <input type="text" name="name" placeholder="name here">
-            <span class="red"> * <?php echo $nameErr;?></span>
-            <br>			
-			<input type="text" name="surname" placeholder="surname here">
-            <span class="red"> * <?php echo $surnameErr;?></span>
+            <span class="red"> * </span>
+            <br>            
+            <input type="text" name="surname" placeholder="surname here">
+            <span class="red"> * </span>
             <br>
             <input type="text" name="adress" placeholder="adress here">
-            <span class="red">  <?php echo $adressErr;?></span>
+           
             <br>
             <input type="text" name="nomer" placeholder="Phone number here">
-            <span class="red">  <?php echo $nomerErr;?></span>
+            
             <br><br>
             <input type="date" name="datee" placeholder="Date here">
-            <span class="red">  <?php echo $dateErr;?></span>
+            
             <br><br>
-            Jinsingiz: <select name="jinsi">
-                <option></option>
-                <option value="m">Man</option>
-                <option value="w">Women</option>
-            </select>
+           
             Fakultetni tanlang:<select name="yunalish">
                 <option></option>
                 <option value="1">KIF</option>
@@ -155,15 +151,15 @@
                 <option value="4">Aloqalash</option>
                 <option value="5">Radio va mobil</option>
             </select> <br>
-						
-			<input id="sub" type="submit" name="submit" value="SUBSCRIBE">
-		</form>
+                        
+            <input id="sub" type="submit" name="sub" value="SUBSCRIBE">
+        </form>
         
-		</div>
+        </div>
     <div style="width:50%; margin-left:100px">
           
     </div>
         
 
 </body>
-</html>
+</html> 

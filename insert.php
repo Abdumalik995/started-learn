@@ -1,60 +1,47 @@
 <?php 
-	include "baza.php";
+  include "baza.php";
 
-
-// define variables and set to empty values
-    $nameErr = $surnameErr = $adressErr = $nomerErr = "";
+$nameErr = $surnameErr = $adressErr = $nomerErr = "";
     $name = $surname = $adress = $nomer = "";
 
-    if (isset($_POST['submit'])) {
-      if (empty($_POST["name"]) || empty($_POST['surname'])) {
-      	echo "Ism va Familiya to'ldirilishi shart <br>";
-
-        //$nameErr = "Ism kiritilmadi";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      if (empty($_POST["name"])) {
+        $nameErr = "Ism kiritilmadi!";
+        
       } else {
         $name = test_input($_POST["name"]);
         // check if name only contains letters and whitespace
         if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-          echo "Ismda faqat harflar va probel bo`lishi mumkin <br>"; 
+          $nameErr = "Ismda faqat harflar va probel bo`lishi mumkin"; 
         }
       }
       if (empty($_POST["surname"])) {
-        $surnameErr = "Familiya kiritilmadi";
+        $surnameErr = "Familiya kiritilmadi!";
       } else {
         $surname = test_input($_POST["surname"]);
         // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z ]*$/",$surname)) {
-          echo "Familiya faqat harflar va probel bo`lishi mumkin <br>"; 
+        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+          $surnameErr = "Familiya faqat harflardan iborat bulishi mumkin!";
         }
-      } 
-      if (empty($_POST["jinsi"])) {
-        $jinsiErr = "";
-      } else {
-        $jinsi = test_input($_POST["jinsi"]);
       }     
 
       if (empty($_POST["adress"])) {
-        $adressErr = "";
+        $adressErr = "Manzilingizni kiriting";
       } else {
         $adress = test_input($_POST["adress"]);
       }
 
       if (empty($_POST["nomer"])) {
-        $nomerErr = "";
+        $nomer = "";
       } else {
         $nomer = test_input($_POST["nomer"]);
       }
       if (empty($_POST["datee"])) {
-        $dateerr = "";
+        $datee = "";
       } else {
         $datee = test_input($_POST["datee"]);
       }
-      if (empty($_POST["yunalish"])) {
-        $yunalishErr = "";
-      } else {
-        $yunalish = test_input($_POST["yunalish"]);
-      }
-
+      
       
     }
 
@@ -78,47 +65,42 @@
             echo $datee;
             echo "<br>";
             echo $yunalish;*/
-           /* $name = $_POST['name'];
-            $surname = $_POST['surname'];
-            $nomer = $_POST['nomer'];
-            $adress = $_POST['adress'];
-            $datee = $_POST['datee'];
-            $yunalish = $_POST['yunalish'];*/
+           
         
-       $query = "INSERT INTO talabalar (name, surname, nomer, adress, datee, yunalish_id) VALUES ('$name', 
-       '$surname', '$nomer', '$adress', '$datee', '$yunalish')";
+       $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish')";
+       
+       //INSERT INTO  `tatu`.`talabalar` (
+
 
        $result = mysqli_query($db, $query);
 
        if($result) {
-       	echo "yozildi <br>";
+        echo "yozildi <br>";
        } else {
-       	echo "yozilmadi";
-       }
-       $query1 = "DELETE FROM talabalar where id='60'";
-       $result1 = mysqli_query($db, $query1);
+        echo "yozilmadi";
+       }  
 
-       if($result1) {
-       	echo "O`chirildi 1";
-       }
-       else {
-       	echo "no deleted";
-       }
-       $sql = "SELECT * FROM talabalar";
+  $sql = "SELECT * FROM talabalar";
        $res = mysqli_query($db, $sql);
        $talabalar = array();
        while($row = mysqli_fetch_assoc($res)) {
-       	$talabalar[] = $row;
-       } 
-      
+        $talabalar[] = $row;
+       }
 
- ?>
+     /*  $sqll = "DELETE FROM talabalar where name='Abdumalik'";
+       $resd = mysqli_query($db, $sqll);
+       if($resd) {
+        echo "uch";
+       } else {
+        echo "no";
+       }
+*/ ?>
  	<table border="1" width="800">
     		<tr>
     			<th>Id</th>
     			<th>NAME</th>
     			<th>SURNAME</th>
-    			<th>JINSI</th>
+    			
     			<th>ADRESS</th>
     			<th>NOMER</th>
     			<th>DATEE</th>

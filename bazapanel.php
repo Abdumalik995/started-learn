@@ -1,6 +1,6 @@
 <?php     
     // define variables and set to empty values
-    $nameErr = $surnameErr = $adressErr = $nomerErr = "";
+    /*$nameErr = $surnameErr = $adressErr = $nomerErr = "";
     $name = $surname = $adress = $nomer = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -49,7 +49,7 @@
       $data = stripslashes($data);
       $data = htmlspecialchars($data);
       return $data;
-    }
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -126,12 +126,12 @@
         <div></div>
 			<h1>Talk to <span> me </span></h1>
             <p><span class="red">*</span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
-			<form id="form" action="" method="post">
+			<form id="form" action="panel.php" method="post">
             <input type="text" name="name" placeholder="name here">
-            <span class="red"> * <?php echo $nameErr; ?></span>
+            <span class="red"> * </span>
             <br>			
 			<input type="text" name="surname" placeholder="surname here">
-            <span class="red"> * <?php echo $surnameErr; ?></span>
+            <span class="red"> * </span>
             <br>
             <input type="text" name="adress" placeholder="adress here">
            
@@ -142,21 +142,17 @@
             <input type="date" name="datee" placeholder="Date here">
             
             <br><br>
-            Jinsingiz: <select name="jinsi">
-                <option></option>
-                <option value="m">Man</option>
-                <option value="w">Women</option>
-            </select>
+           
             Fakultetni tanlang:<select name="yunalish">
                 <option></option>
                 <option value="1">KIF</option>
                 <option value="2">Telekom</option>
                 <option value="3">Dasturiy</option>
-                <option value="4">Aloqala</option>
+                <option value="4">Aloqalash</option>
                 <option value="5">Radio va mobil</option>
             </select> <br>
 						
-			<input id="sub" type="submit" name="submit" value="SUBSCRIBE">
+			<input id="sub" type="submit" name="sub" value="SUBSCRIBE">
 		</form>
         
 		</div>
@@ -166,4 +162,4 @@
         
 
 </body>
-</html>
+</html> 

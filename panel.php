@@ -1,5 +1,99 @@
 <?php 
   include "baza.php";
+
+$nameErr = $surnameErr = $adressErr = $nomerErr = "";
+    $name = $surname = $adress = $nomer = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      if (empty($_POST["name"])) {
+        $nameErr = "Ism kiritilmadi!";
+        
+      } else {
+        $name = test_input($_POST["name"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+          $nameErr = "Ismda faqat harflar va probel bo`lishi mumkin"; 
+        }
+      }
+      if (empty($_POST["surname"])) {
+        $surnameErr = "Familiya kiritilmadi!";
+      } else {
+        $surname = test_input($_POST["surname"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+          $surnameErr = "Familiya faqat harflardan iborat bulishi mumkin!";
+        }
+      }     
+
+      if (empty($_POST["adress"])) {
+        $adressErr = "Manzilingizni kiriting";
+      } else {
+        $adress = test_input($_POST["adress"]);
+      }
+
+      if (empty($_POST["nomer"])) {
+        $nomer = "";
+      } else {
+        $nomer = test_input($_POST["nomer"]);
+      }
+      if (empty($_POST["datee"])) {
+        $datee = "";
+      } else {
+        $datee = test_input($_POST["datee"]);
+      }
+      
+      
+    }
+
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
+    
+            /*echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
+            echo $name;
+            echo "<br>";
+            echo $surname;
+            echo "<br>";
+            echo $adress;
+            echo "<br>";
+            echo $nomer;
+            echo "<br>";
+            echo $datee;
+            echo "<br>";
+            echo $yunalish;*/
+           
+        
+       $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish')";
+       
+       //INSERT INTO  `tatu`.`talabalar` (
+
+
+       $result = mysqli_query($db, $query);
+
+       if($result) {
+        echo "yozildi <br>";
+       } else {
+        echo "yozilmadi";
+       }  
+
+  $sql = "SELECT * FROM talabalar";
+       $res = mysqli_query($db, $sql);
+       $talabalar = array();
+       while($row = mysqli_fetch_assoc($res)) {
+        $talabalar[] = $row;
+       }
+
+      /* $sqll = "DELETE FROM talabalar where name='Abdumalik'";
+       $resd = mysqli_query($db, $sqll);
+       if($resd) {
+        echo "uch";
+       } else {
+        echo "no";
+       }*/
  ?>
 <!DOCTYPE html>
 <html>
@@ -39,75 +133,32 @@
 <table>
   <tr>
   	 <th class="small">N</th>
-    <th>Ism Familiyas</th>
-    <th>Manzil</th>
-    <th>Fakultet</th>
-    <th></th>
-     <th></th>
+    <th>Ismi</th>
+    <th>Familiyasi</th>    
+    <th>Manzili</th>
+    <th>Tel raqami</th>
+    <th>Tug' yili</th>
+     <th>Yunalish id</th>
+     <th>Yozish</th>
+     <th>O'chirish</th>
   </tr>
-  <tr><td>1</td>
-    <td>Axmedov Davron</td>
-    <td>Toshkent shaxri</td>
-    <td>Telekominikatsiya</td>
-    <td class="small"><a href="#"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="#"><img src="img/delete.png"></a></td>
+  
+    <?php foreach ($talabalar as  $talaba) { ?>         
+        <tr>
+                <?php foreach ($talaba as $val) { ?>
+                    <td><?php echo $val ?></td>
+                        <?php } ?>
+                    
+                 
+          
+                  
+      
+        
+    <td class="small"><a href="edit.php?id=<?=$talaba['id']?>"><img src="img/edit.png"></a></td>
+    <td class="small"><a href="delete.php?id=<?=$talaba['id']?>"><img src="img/delete.png"></a></td>
   </tr>
-  <tr><td>2</td>
-    <td>Axmedov Davron</td>
-    <td>Toshkent shaxri</td>
-    <td>Telekominikatsiya</td>
-    <td class="small"><a href="#"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="#"><img src="img/delete.png"></a></td>
-  </tr>
-  <tr><td>3</td>
-    <td>Axmedov Davron</td>
-    <td>Toshkent shaxri</td>
-    <td>Telekominikatsiya</td>
-    <td class="small"><a href="#"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="#"><img src="img/delete.png"></a></td>
-  </tr>
-  <tr><td>4</td>
-    <td>Axmedov Davron</td>
-    <td>Toshkent shaxri</td>
-    <td>Telekominikatsiya</td>
-    <td class="small"><a href="#"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="#"><img src="img/delete.png"></a></td>
-  </tr>
-  <tr><td>5</td>
-    <td>Axmedov Davron</td>
-    <td>Toshkent shaxri</td>
-    <td>Telekominikatsiya</td>
-    <td class="small"><a href="#"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="#"><img src="img/delete.png"></a></td>
-  </tr>
-  <tr><td>6</td>
-    <td>Axmedov Davron</td>
-    <td>Toshkent shaxri</td>
-    <td>Telekominikatsiya</td>
-    <td class="small"><a href="#"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="#"><img src="img/delete.png"></a></td>
-  </tr>
-  <tr><td>7</td>
-    <td>Axmedov Davron</td>
-    <td>Toshkent shaxri</td>
-    <td>Telekominikatsiya</td>
-    <td class="small"><a href="#"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="#"><img src="img/delete.png"></a></td>
-  </tr>
-  <tr><td>8</td>
-    <td>Axmedov Davron</td>
-    <td>Toshkent shaxri</td>
-    <td>Telekominikatsiya</td>
-    <td class="small"><a href="#"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="#"><img src="img/delete.png"></a></td>
-  </tr>
-  <tr><td>9</td>
-    <td>Axmedov Davron</td>
-    <td>Toshkent shaxri</td>
-    <td>Telekominikatsiya</td>
-    <td class="small"><a href="#"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="#"><img src="img/delete.png"></a></td>
-  </tr> 
+  <?php } ?>
+    
 </table>
 	</div>
 </section>
