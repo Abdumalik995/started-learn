@@ -5,7 +5,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty($_POST["name"])) {
-        echo "Ism kiritilmadi";
+        $nameErr = "Ism kiritilmadi!";
         
       } else {
         $name = test_input($_POST["name"]);
@@ -15,17 +15,17 @@
         }
       }
       if (empty($_POST["surname"])) {
-        $surnameErr = "Familiya kiritilmadi";
+        $surnameErr = "Familiya kiritilmadi!";
       } else {
         $surname = test_input($_POST["surname"]);
         // check if name only contains letters and whitespace
         if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-          $surnameErr = "Ismda faqat harflar va probel bo`lishi mumkin"; 
+          $surnameErr = "Familiya faqat harflardan iborat bulishi mumkin!";
         }
       }     
 
       if (empty($_POST["adress"])) {
-        $adress = "";
+        $adressErr = "Manzilingizni kiriting";
       } else {
         $adress = test_input($_POST["adress"]);
       }
@@ -55,7 +55,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>baza1 php</title>
+	<title>bazap php</title>
 </head>
 <style type="text/css">
     
@@ -128,10 +128,10 @@
             <p><span class="red">*</span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
 			<form id="form" action="" method="post">
             <input type="text" name="name" placeholder="name here">
-            <span class="red"> * </span>
+            <span class="red"> * <?php echo $nameErr; ?></span>
             <br>			
 			<input type="text" name="surname" placeholder="surname here">
-            <span class="red"> * </span>
+            <span class="red"> * <?php echo $surnameErr; ?></span>
             <br>
             <input type="text" name="adress" placeholder="adress here">
            

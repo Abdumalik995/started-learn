@@ -152,7 +152,7 @@
                 <option value="1">KIF</option>
                 <option value="2">Telekom</option>
                 <option value="3">Dasturiy</option>
-                <option value="4">Aloqala</option>
+                <option value="4">Aloqalash</option>
                 <option value="5">Radio va mobil</option>
             </select> <br>
 						

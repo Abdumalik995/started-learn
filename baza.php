@@ -3,9 +3,9 @@
 	 define("DBUSER", "root");
 	 define("DBPASSWORD", "");
 	 define("DBNAME", "tatu");
-	 $connect = @mysqli_connect(DBHOST,DBUSER,DBPASSWORD,DBNAME);
+	 $db = @mysqli_connect(DBHOST,DBUSER,DBPASSWORD,DBNAME);
 
-	 if (!$connect) {
+	 if (!$db) {
 	 	echo 'bazaga ulanmadi <br>';
 	 	
 	 } else {

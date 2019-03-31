@@ -85,26 +85,27 @@
             $datee = $_POST['datee'];
             $yunalish = $_POST['yunalish'];*/
         
-       $query = "INSERT INTO talabalar (name, surname, jinsi, nomer, adress, datee, yunalish_id) VALUES ('$name', '$surname', '$jinsi','$nomer', '$adress', '$datee', '$yunalish')";
+       $query = "INSERT INTO talabalar (name, surname, nomer, adress, datee, yunalish_id) VALUES ('$name', 
+       '$surname', '$nomer', '$adress', '$datee', '$yunalish')";
 
-       $result = mysqli_query($connect, $query);
+       $result = mysqli_query($db, $query);
 
-      /* if($result) {
+       if($result) {
        	echo "yozildi <br>";
        } else {
        	echo "yozilmadi";
        }
-       $query1 = "DELETE FROM talabalar where id='18'";
-       $result1 = mysqli_query($connect, $query1);
+       $query1 = "DELETE FROM talabalar where id='60'";
+       $result1 = mysqli_query($db, $query1);
 
        if($result1) {
        	echo "O`chirildi 1";
        }
        else {
        	echo "no deleted";
-       }*/
+       }
        $sql = "SELECT * FROM talabalar";
-       $res = mysqli_query($connect, $sql);
+       $res = mysqli_query($db, $sql);
        $talabalar = array();
        while($row = mysqli_fetch_assoc($res)) {
        	$talabalar[] = $row;
@@ -131,6 +132,10 @@
                     <td><?php echo $val ?></td>
                         <?php } ?>
                    	<td><a href="edit.php?id=<?=$talaba['id']?>">Edit</a></td>
+                 
+    			<!-- <td><?php echo $value['ismi']; ?></td>
+    			<td><?php echo $value['yoshi']; ?></td>
+    			<td><?php echo $value['kasbi']; ?></td> -->
     			   			
     		</tr>
     		<?php } ?>
