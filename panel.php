@@ -1,3 +1,6 @@
+<?php 
+  include "baza.php";
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
