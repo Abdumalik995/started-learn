@@ -74,11 +74,11 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
 
        $result = mysqli_query($db, $query);
 
-       if($result) {
+       /*if($result) {
         echo "yozildi <br>";
        } else {
         echo "yozilmadi";
-       }  
+       } */ 
 
   $sql = "SELECT * FROM talabalar";
        $res = mysqli_query($db, $sql);
@@ -87,7 +87,7 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
         $talabalar[] = $row;
        }
 
-      /* $sqll = "DELETE FROM talabalar where name='Abdumalik'";
+      /* $sqll = "DELETE FROM talabalar where name='Mali'";
        $resd = mysqli_query($db, $sqll);
        if($resd) {
         echo "uch";
@@ -118,7 +118,7 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
 <nav>
 	<h1>Menyular bloki</h1>
 	<ul>
-		<li><a href="#">Talabalar</a></li>
+		<li><a href="panel.php">Talabalar</a></li>
 			<li><a href="#">Fakultetlar</a></li>
 			<li><a href="#">Fanlar</a></li>
 			<li><a href="#">Semstr natijalari</a></li>

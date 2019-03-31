@@ -5,10 +5,10 @@
 	 define("DBNAME", "tatu");
 	 $db = @mysqli_connect(DBHOST,DBUSER,DBPASSWORD,DBNAME);
 
-	 if (!$db) {
+	/* if (!$db) {
 	 	echo 'bazaga ulanmadi <br>';
 	 	
 	 } else {
 	 	echo 'bazaga ulandi <br>';
-	 }
+	 }*/
  ?>

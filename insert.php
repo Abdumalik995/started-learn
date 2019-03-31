@@ -74,11 +74,11 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
 
        $result = mysqli_query($db, $query);
 
-       if($result) {
+       /*if($result) {
         echo "yozildi <br>";
        } else {
         echo "yozilmadi";
-       }  
+       }  */
 
   $sql = "SELECT * FROM talabalar";
        $res = mysqli_query($db, $sql);
