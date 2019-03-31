@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
 	<title>Control panel</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="stylePanel.css">
 </head>
 <body>
 	<!--Header qismining boshlanishi-->
@@ -34,7 +35,7 @@
 	<h1>Asosiy ma'lumotlar</h1>
 <table>
   <tr>
-  	 <th class="small">№</th>
+  	 <th class="small">N</th>
     <th>Ism Familiyas</th>
     <th>Manzil</th>
     <th>Fakultet</th>
