@@ -46,7 +46,7 @@
 <!--chap blokni boshlanishi-->
 <section>
 	<div class="content">
-	<h1>Simestr reyning natijalari</h1>
+	<h1>Semestr reyning natijalari</h1>
 <table>
   <tr>
   	 <th class="small">N</th>
