@@ -43,7 +43,7 @@
 <!--chap blokni boshlanishi-->
 <section>
 	<div class="content">
-	<h1>Asosiy ma'lumotlar</h1>
+	<h1>Fakultetlar</h1>
 <table>
   <tr>
   	 <th class="small">N</th>
