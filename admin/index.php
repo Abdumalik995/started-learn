@@ -45,12 +45,12 @@
         echo "yuq";
       }*/
       $talabalar1 = array();
-       while($row1 = mysqli_fetch_assoc($res)) {
+        while($row1 = mysqli_fetch_assoc($res)) {
         $talabalar1[] = $row1;
-       }
-       $i=1;
+      }
+      $i=1;
       /*======*/
-      /* if(empty($name) and empty($surname)) {
+       if(empty($name) and empty($surname)) {
         $query = '';
        } else {
          $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish')";
@@ -58,13 +58,13 @@
        
        $result = @mysqli_query($db, $query);
 
-       if($result) {
+      /* if($result) {
         echo "yozildi <br>";
        } else {
         echo "yozilmadi";
        }  
 
-  $sql = "SELECT * FROM talabalar";
+      $sql = "SELECT * FROM talabalar";
        $res = mysqli_query($db, $sql);
        $talabalar = array();
        while($row = mysqli_fetch_assoc($res)) {
@@ -115,6 +115,7 @@
 <section>
 	<div class="content">
 	<h1>Asosiy ma'lumotlar</h1>
+  <a href="bazapanel.php">Qushish</a><br><br>
 <table>
   <tr>
   	 <th class="small">N</th>

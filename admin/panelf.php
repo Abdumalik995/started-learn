@@ -1,9 +1,6 @@
 <?php 
 	include "baza.php";
 
-
-
-
 	 $sql = "SELECT * FROM yunalish";
        $res = mysqli_query($db, $sql);
        $yunalish = array();

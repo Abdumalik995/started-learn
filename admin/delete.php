@@ -7,8 +7,8 @@
 		header('Location: index.php');
 	}
 
-	$sqll = "DELETE FROM talabalar where id = $id";
-       $res = mysqli_query($db, $sqll);
+	$sql = "DELETE FROM talabalar where id = $id";
+       $res = mysqli_query($db, $sql);
        if($res) {
         header('Location: index.php');
        } else {

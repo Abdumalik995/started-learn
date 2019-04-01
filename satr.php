@@ -56,7 +56,7 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select name, surname, datee from talabalar where datee between "1997-02-10" and "1999-01-10" // mana shu oraliqda tug'ilganlar
 // select concat(name, " ",surname) as FIO from talabalar where jinsi="w"; // jinsi buyicha topish...
 // select name, surname from talabalar where surname LIKE '%a'; // ruyhatdagi familiya oxirgi harfi a bulgan yani qiz bolalarni topish
-// SELECT talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROm talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id;
+// SELECT talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROM talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id;
 
 
  
