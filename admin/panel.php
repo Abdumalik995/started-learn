@@ -124,7 +124,7 @@
 <head>
   <meta charset="utf-8">
 	<title>Control panel</title>
-	<link rel="stylesheet" type="text/css" href="stylePanel.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<!--Header qismining boshlanishi-->
