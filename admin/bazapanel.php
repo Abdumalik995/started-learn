@@ -127,8 +127,8 @@
         <div></div>
 			<h1>Talk to <span> me </span></h1>
             <p><span class="red">*</span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
-			<form id="form" action="index.php" method="post">
-            <input type="text" name="name" placeholder="name here">
+			<form id="form" action="insert.php" method="post" autocomplete="off">
+            <input type="text" name="name"  placeholder="name here">
             <span class="red"> * <?php echo $nameErr; ?></span>
             <br>			
 			<input type="text" name="surname" placeholder="surname here">

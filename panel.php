@@ -76,7 +76,7 @@
       return $data;
     }
 
-      $queryJoin = "SELECT talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROm talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
+      $queryJoin = "SELECT talaba.id AS Id, talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROm talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
       $res = mysqli_query($db, $queryJoin);
       /*if($res) {
         echo "bor";
