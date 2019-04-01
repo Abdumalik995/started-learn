@@ -28,46 +28,7 @@
         $datee = test_input($_POST["datee"]);
       }
       $yunalish = $_POST['yunalish'];
-    }
-    /*if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      if (empty($_POST["name"])) {
-        $nameErr = "Ism kiritilmadi!";
-        
-      } else {
-        $name = test_input($_POST["name"]);
-        // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-          $nameErr = "Ismda faqat harflar va probel bo`lishi mumkin"; 
-        }
-      }
-      if (empty($_POST["surname"])) {
-        $surnameErr = "Familiya kiritilmadi!";
-      } else {
-        $surname = test_input($_POST["surname"]);
-        // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-          $surnameErr = "Familiya faqat harflardan iborat bulishi mumkin!";
-        }
-      }     
-
-      if (empty($_POST["adress"])) {
-        $adressErr = "Manzilingizni kiriting";
-      } else {
-        $adress = test_input($_POST["adress"]);
-      }
-
-      if (empty($_POST["nomer"])) {
-        $nomer = "";
-      } else {
-        $nomer = test_input($_POST["nomer"]);
-      }
-      if (empty($_POST["datee"])) {
-        $datee = "";
-      } else {
-        $datee = test_input($_POST["datee"]);
-      }     
-      
-    }*/
+    }  
 
     function test_input($data) {
       $data = trim($data);
@@ -76,7 +37,7 @@
       return $data;
     }
 
-      $queryJoin = "SELECT talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROm talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
+      $queryJoin = "SELECT talaba.id AS id, talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROm talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
       $res = mysqli_query($db, $queryJoin);
       /*if($res) {
         echo "bor";
@@ -123,7 +84,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-	<title>Control panel</title>
+	<title>Admin Control panel</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -142,7 +103,7 @@
 <nav>
 	<h1>Menyular bloki</h1>
 	<ul>
-		<li><a href="panel.php">Talabalar</a></li>
+		<li><a href="index.php">Talabalar</a></li>
 			<li><a href="panelf.php">Fakultetlar</a></li>
 			<li><a href="panelfan.php">Fanlar</a></li>
 			<li><a href="panels.php">Semstr natijalari</a></li>
@@ -166,15 +127,16 @@
   </tr>
   
     <?php foreach ($talabalar1 as  $talaba1) { ?>         
-      <tr>      
-        <td><?php echo $i; $i++ ?></td>
-        <?php foreach ($talaba1 as $val1) { ?>
-        <td>
-        <?php echo $val1 ?>                      
-        </td>
-        <?php } ?>       
-        <td class="small"><a href="edit.php?id=<?=$talaba['id']?>"><img src="img/edit.png"></a></td>
-        <td class="small"><a href="delete.php?id=<?=$talaba['id']?>"><img src="img/delete.png"></a></td>
+      <tr>    
+      <td><?php echo $i; $i++ ?></td>
+      <td style="display: none;"><?php $talaba1['id'] ?></td>
+      <td><?php echo $talaba1['ISMI'] ?></td>  
+      <td><?php echo $talaba1['Familiyasi'] ?></td>  
+      <td><?php echo $talaba1['Manzili'] ?></td>  
+      <td><?php echo $talaba1['Fakulteti'] ?></td>  
+             
+        <td class="small"><a href="edit.php?id=<?=$talaba1['id']?>"><img src="img/edit.png"></a></td>
+        <td class="small"><a href="delete.php?id=<?=$talaba1['id']?>"><img src="img/delete.png"></a></td>
       </tr>
     <?php } ?>
     
