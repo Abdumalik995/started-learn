@@ -76,9 +76,20 @@
       return $data;
     }
 
-        
-      
-       if(empty($name) and empty($surname)) {
+      $queryJoin = "SELECT talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROm talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
+      $res = mysqli_query($db, $queryJoin);
+      if($res) {
+        echo "bor";
+      } else {
+        echo "yuq";
+      }
+      $talabalar1 = array();
+       while($row1 = mysqli_fetch_assoc($res)) {
+        $talabalar1[] = $row1;
+       }
+       $i=1;
+      /*======*/
+      /* if(empty($name) and empty($surname)) {
         $query = '';
        } else {
          $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish')";
@@ -97,15 +108,16 @@
        $talabalar = array();
        while($row = mysqli_fetch_assoc($res)) {
         $talabalar[] = $row;
-       }
+       }*/
 
-       /*$sqll = "DELETE FROM talabalar where name =' '";
+       /*$sqll = "DELETE FROM talabalar where surname =' '";
        $resd = mysqli_query($db, $sqll);
        if($resd) {
         echo "uch";
        } else {
         echo "no";
        }*/
+       /*=====*/
  ?>
 <!DOCTYPE html>
 <html>
@@ -148,18 +160,17 @@
     <th>Ismi</th>
     <th>Familiyasi</th>    
     <th>Manzili</th>
-    <th>Tel raqami</th>
-    <th>Tug' yili</th>
-     <th>Yunalish id</th>
-     <th>Yozish</th>
-     <th>O'chirish</th>
+    <th>Fakulteti</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
   
-    <?php foreach ($talabalar as  $talaba) { ?>         
-      <tr>
-        <?php foreach ($talaba as $val) { ?>
+    <?php foreach ($talabalar1 as  $talaba1) { ?>         
+      <tr>      
+        <td><?php echo $i; $i++ ?></td>
+        <?php foreach ($talaba1 as $val1) { ?>
         <td>
-        <?php echo $val ?>                      
+        <?php echo $val1 ?>                      
         </td>
         <?php } ?>       
         <td class="small"><a href="edit.php?id=<?=$talaba['id']?>"><img src="img/edit.png"></a></td>
