@@ -1,10 +1,35 @@
 <?php 
   include "baza.php";
 
-$nameErr = $surnameErr = $adressErr = $nomerErr = "";
-    $name = $surname = $adress = $nomer = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(isset($_POST['sub'])) {
+      if(empty($_POST['name'])) {
+        header("Location: bazapanel.php");
+      }else {
+        $name = test_input($_POST["name"]);
+      }
+      if(empty($_POST['surname'])) {
+        header("Location: bazapanel.php");
+      }else {
+        $surname = test_input($_POST["surname"]);
+      }
+      if (empty($_POST["adress"])) {
+        header("Location: bazapanel.php");
+      } else {
+        $adress = test_input($_POST["adress"]);
+      }
+      if (empty($_POST["nomer"])) {
+        header("Location: bazapanel.php");
+      } else {
+        $nomer = test_input($_POST["nomer"]);
+      }
+      if (empty($_POST["datee"])) {
+        header("Location: bazapanel.php");
+      } else {
+        $datee = test_input($_POST["datee"]);
+      }
+      $yunalish = $_POST['yunalish'];
+    }
+    /*if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty($_POST["name"])) {
         $nameErr = "Ism kiritilmadi!";
         
@@ -40,10 +65,9 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
         $datee = "";
       } else {
         $datee = test_input($_POST["datee"]);
-      }
+      }     
       
-      
-    }
+    }*/
 
     function test_input($data) {
       $data = trim($data);
@@ -52,33 +76,21 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
       return $data;
     }
 
-    
-            /*echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
-            echo $name;
-            echo "<br>";
-            echo $surname;
-            echo "<br>";
-            echo $adress;
-            echo "<br>";
-            echo $nomer;
-            echo "<br>";
-            echo $datee;
-            echo "<br>";
-            echo $yunalish;*/
-           
         
-       $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish')";
+      
+       if(empty($name) and empty($surname)) {
+        $query = '';
+       } else {
+         $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish')";
+       }
        
-       //INSERT INTO  `tatu`.`talabalar` (
+       $result = @mysqli_query($db, $query);
 
-
-       $result = mysqli_query($db, $query);
-
-       /*if($result) {
+       if($result) {
         echo "yozildi <br>";
        } else {
         echo "yozilmadi";
-       } */ 
+       }  
 
   $sql = "SELECT * FROM talabalar";
        $res = mysqli_query($db, $sql);
@@ -87,7 +99,7 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
         $talabalar[] = $row;
        }
 
-      /* $sqll = "DELETE FROM talabalar where name='Mali'";
+       /*$sqll = "DELETE FROM talabalar where name =' '";
        $resd = mysqli_query($db, $sqll);
        if($resd) {
         echo "uch";
@@ -119,9 +131,9 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
 	<h1>Menyular bloki</h1>
 	<ul>
 		<li><a href="panel.php">Talabalar</a></li>
-			<li><a href="#">Fakultetlar</a></li>
-			<li><a href="#">Fanlar</a></li>
-			<li><a href="#">Semstr natijalari</a></li>
+			<li><a href="panelf.php">Fakultetlar</a></li>
+			<li><a href="panelfan.php">Fanlar</a></li>
+			<li><a href="panels.php">Semstr natijalari</a></li>
 			<li><a href="#">Tizimdan chiqish</a></li>
    
 	</ul>
@@ -144,20 +156,16 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
   </tr>
   
     <?php foreach ($talabalar as  $talaba) { ?>         
-        <tr>
-                <?php foreach ($talaba as $val) { ?>
-                    <td><?php echo $val ?></td>
-                        <?php } ?>
-                    
-                 
-          
-                  
-      
-        
-    <td class="small"><a href="edit.php?id=<?=$talaba['id']?>"><img src="img/edit.png"></a></td>
-    <td class="small"><a href="delete.php?id=<?=$talaba['id']?>"><img src="img/delete.png"></a></td>
-  </tr>
-  <?php } ?>
+      <tr>
+        <?php foreach ($talaba as $val) { ?>
+        <td>
+        <?php echo $val ?>                      
+        </td>
+        <?php } ?>       
+        <td class="small"><a href="edit.php?id=<?=$talaba['id']?>"><img src="img/edit.png"></a></td>
+        <td class="small"><a href="delete.php?id=<?=$talaba['id']?>"><img src="img/delete.png"></a></td>
+      </tr>
+    <?php } ?>
     
 </table>
 	</div>

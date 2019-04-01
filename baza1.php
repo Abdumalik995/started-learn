@@ -152,7 +152,7 @@
                 <option value="5">Radio va mobil</option>
             </select> <br>
                         
-            <input id="sub" type="submit" name="sub" value="SUBSCRIBE">
+            <input id="sub" type="submit" name="submit" value="SUBSCRIBE">
         </form>
         
         </div>

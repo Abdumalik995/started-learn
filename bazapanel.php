@@ -1,8 +1,9 @@
 <?php     
-    // define variables and set to empty values
-    /*$nameErr = $surnameErr = $adressErr = $nomerErr = "";
+    /*// define variables and set to empty values
+    $nameErr = $surnameErr = $adressErr = $nomerErr = "";
     $name = $surname = $adress = $nomer = "";
 
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty($_POST["name"])) {
         $nameErr = "Ism kiritilmadi!";
@@ -128,13 +129,13 @@
             <p><span class="red">*</span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
 			<form id="form" action="panel.php" method="post">
             <input type="text" name="name" placeholder="name here">
-            <span class="red"> * </span>
+            <span class="red"> * <?php echo $nameErr; ?></span>
             <br>			
 			<input type="text" name="surname" placeholder="surname here">
-            <span class="red"> * </span>
+            <span class="red"> * <?php echo $surnameErr; ?></span>
             <br>
             <input type="text" name="adress" placeholder="adress here">
-           
+            <span class="red"> * <?php echo $adressErr; ?></span>
             <br>
             <input type="text" name="nomer" placeholder="Phone number here">
             

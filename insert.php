@@ -41,7 +41,7 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
       } else {
         $datee = test_input($_POST["datee"]);
       }
-      
+      $yunalish = $_POST['yunalish'];
       
     }
 
