@@ -85,22 +85,26 @@ print_r($row);
 			<h1>Ro`yxatni <span>o`zgartirish</span></h1>
                  
 			<form id="form" action="update.php" method="post" autocomplete="off">
-            <input type="text" name="name"  placeholder="Ism">
+            <input type="text" name="name"  placeholder="Ism" value="<?=$row['name'];?>">
             
             <br>			
-			<input type="text" name="surname" placeholder="Familiya">
+			<input type="text" name="surname" placeholder="Familiya" value="<?=$row['surname'];?>">
             
             <br>
-            <input type="text" name="adress" placeholder="Manzil"><br>
+            <input type="text" name="adress" placeholder="Manzil" value="<?=$row['adress'];?>"><br>
+            <br>
+            <input type="text" name="yunalish" placeholder="Yunalish_id" value="<?=$row['yunalish_id'];?>">
+            
+            <input style="display:none;" type="text" name="id" placeholder="id" value="<?=$row['id'];?>"><br>
                
-            Fakultetni tanlang: <select name="yunalish">
+            <!-- Fakultetni tanlang: <select name="yunalish"  value="<?=$row['yunalish_id'];?>">
                 <option></option>
                 <option value="1">KIF</option>
                 <option value="2">Telekom</option>
                 <option value="3">Dasturiy</option>
                 <option value="4">Aloqalash</option>
                 <option value="5">Radio va mobil</option>
-            </select> <br>
+            </select> <br> -->
 						
 			<input id="sub" type="submit" name="sub" value="SUBSCRIBE">
 		</form>
