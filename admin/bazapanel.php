@@ -157,7 +157,7 @@
 		</form>
         
 		</div>
-    <div style="width:50%; margin-left:100px">
+   
           
     </div>
         
