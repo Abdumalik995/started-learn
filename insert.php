@@ -51,26 +51,10 @@ $nameErr = $surnameErr = $adressErr = $nomerErr = "";
       $data = htmlspecialchars($data);
       return $data;
     }
-
-    
-            /*echo "<h2>Sizning Ma`lumotlaringiz:</h2>";
-            echo $name;
-            echo "<br>";
-            echo $surname;
-            echo "<br>";
-            echo $adress;
-            echo "<br>";
-            echo $nomer;
-            echo "<br>";
-            echo $datee;
-            echo "<br>";
-            echo $yunalish;*/
-           
+ 
         
        $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish')";
        
-       //INSERT INTO  `tatu`.`talabalar` (
-
 
        $result = mysqli_query($db, $query);
 

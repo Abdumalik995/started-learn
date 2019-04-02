@@ -1,9 +1,6 @@
 <?php 
 	include "baza.php";
 
-
-
-
 	 $sql = "SELECT * FROM fanlar";
        $res = mysqli_query($db, $sql);
        $fanlar = array();

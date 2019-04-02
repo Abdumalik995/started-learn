@@ -1,7 +1,7 @@
 <?php 
   include "baza.php";
 
-      $queryJoin = "SELECT talaba.id AS id, talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROm talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
+      $queryJoin = "SELECT talaba.id AS id, talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROM talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
       $res = mysqli_query($db, $queryJoin);
       
       $talabalar1 = array();
