@@ -1,5 +1,6 @@
 <?php 
-
+include "baza.php";
+if(isset($_GET['id']))
  ?>
 
  <!DOCTYPE html>
@@ -12,11 +13,11 @@
 	#mail {
     position: relative;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 100px;
     padding-top: 10px;
     padding-left: 100px;
-    width: 70%;
-    height: 650px;
+    width: 50%;
+    height: 440px;
     /*text-align: center;*/
     background: #fff;
     box-shadow: 0px 0px 10px #222;
@@ -74,31 +75,25 @@
 
 	<div id="mail">
         <div></div>
-			<h1>Edit <span></span></h1>
+			<h1>Ro`yxatni <span>o`zgartirish</span></h1>
                  
 			<form id="form" action="update.php" method="post" autocomplete="off">
-            <input type="text" name="name"  placeholder="name here">
+            <input type="text" name="name"  placeholder="Ism">
             
             <br>			
-			<input type="text" name="surname" placeholder="surname here">
+			<input type="text" name="surname" placeholder="Familiya">
             
             <br>
-            <input type="text" name="adress" placeholder="adress here">
-            
-            <br>
-            <input type="text" name="yunalish">
-            
-            <br><br>
-            
-           
-            <!-- Fakultetni tanlang:<select name="yunalish">
+            <input type="text" name="adress" placeholder="Manzil"><br>
+               
+            Fakultetni tanlang: <select name="yunalish">
                 <option></option>
                 <option value="1">KIF</option>
                 <option value="2">Telekom</option>
                 <option value="3">Dasturiy</option>
                 <option value="4">Aloqalash</option>
                 <option value="5">Radio va mobil</option>
-            </select> <br> -->
+            </select> <br>
 						
 			<input id="sub" type="submit" name="sub" value="SUBSCRIBE">
 		</form>
