@@ -2,14 +2,14 @@
 include "baza.php";
 
 if(isset($_POST['sub'])) {
-	//print_r($_POST);
+	
 	$id = $_POST['id'];
 	$name = $_POST['name'];
 	$surname = $_POST['surname'];
 	$adress = $_POST['adress'];	
 	$yunalish = $_POST['yunalish'];
 
-	$sql = "UPDATE `talabalar` SET `name` = '$name', `surname` = '$surname', `adress` = '$adress', `yunalish_id` = '$yunalish' WHERE `talabalar`.`id`= '$id'";
+	$sql = "UPDATE `talabalar` SET `name` = '$name', `surname` = '$surname', `adress` = '$adress', `yunalish_id` = '$yunalish' WHERE `id`= '$id'";
 
 	$res = mysqli_query($db, $sql);
 	if($res) {
