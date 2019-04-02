@@ -1,6 +1,13 @@
 <?php 
 include "baza.php";
-if(isset($_GET['id']))
+if(isset($_GET['id'])) {
+	$id = $_GET['id'];
+}
+
+$sql = "SELECT * FROM talabalar WHERE id=$id";
+$res = mysqli_query($db, $sql);
+$row = mysqli_fetch_assoc($res);
+print_r($row);
  ?>
 
  <!DOCTYPE html>
