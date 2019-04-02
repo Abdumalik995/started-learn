@@ -7,7 +7,7 @@ if(isset($_GET['id'])) {
 $sql = "SELECT * FROM talabalar WHERE id=$id";
 $res = mysqli_query($db, $sql);
 $row = mysqli_fetch_assoc($res);
-print_r($row);
+
  ?>
 
  <!DOCTYPE html>
@@ -96,16 +96,7 @@ print_r($row);
             <input type="text" name="yunalish" placeholder="Yunalish_id" value="<?=$row['yunalish_id'];?>">
             
             <input style="display:none;" type="text" name="id" placeholder="id" value="<?=$row['id'];?>"><br>
-               
-            <!-- Fakultetni tanlang: <select name="yunalish"  value="<?=$row['yunalish_id'];?>">
-                <option></option>
-                <option value="1">KIF</option>
-                <option value="2">Telekom</option>
-                <option value="3">Dasturiy</option>
-                <option value="4">Aloqalash</option>
-                <option value="5">Radio va mobil</option>
-            </select> <br> -->
-						
+              	
 			<input id="sub" type="submit" name="sub" value="SUBSCRIBE">
 		</form>
         
