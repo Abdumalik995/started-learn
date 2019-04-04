@@ -43,6 +43,17 @@ $matn = "lorem ipsum icons awesome html code js";
 //echo " massiv elementlari ayirmasi ", round($nums[2])-$num[1].'<br>';
 //echo " massiv elementi va alohida o` zgaruvchi ayirmasi ", $num[1]-$c.'<br>';
 
+/*=============*/
+       /*$ismi = "ma";
+       $kasbi = "dust";
+       $yoshi = 12;
+       $bv = compact('ismi','kasbi','yoshi');//uzgarivchilar massivga biriktirildi.
+       print_r($bv);
+       $gg  = array('mal' => 'nmn', 'nm'=>'hjh');//massiv uzgarivchilarga biriktirildi.
+       extract($gg);
+       echo $nm;*/
+/*==============*/
+
 
  $ship = array(
  "Passenger ship" => array("Yacht","Liner","Ferry"),

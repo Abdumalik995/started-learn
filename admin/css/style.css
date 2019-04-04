@@ -1,3 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0 !important;
+}
 header {
     background-color: #37b0ea;
     padding: 10px;
@@ -19,8 +26,9 @@ h1, em {
 }
 nav {
     background-color: #9fcee5;
-    width: 23%;
+    width: 21% !important;
     height: 100%;
+
     float: left;
     line-height: 30px;
 }
@@ -38,7 +46,7 @@ nav ul li a:hover {
 section {
     width: 77%;
     background-color: #ffffff;
-   
+     min-height: 500px !important;
     float: left;
 }
 .content {

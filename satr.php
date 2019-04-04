@@ -27,7 +27,6 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select name, yil, narxi from salon1 where davlat="Turkiya"
 // select max(soni), id, name, davlat from salon1
 // select count(davlat)  from salon1 where davlat="Turkiya"
-// select count(davlat), name, davlat, narxi  from salon1 where davlat="Turkiya" // natijasiz
 // select name, davlat, narxi  from salon1 where yil>"2019-02-10"
 
 // select concat(name,' ', surname) as "ism familiya", adress as manzil from talabalar where adress="Tashkent"
@@ -42,12 +41,11 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select name, surname, adress from talabalar where adress="Tashkent" || adress="Buxoro"// yoki (or) operatori orqali chiqarish
 // INSERT INTO talabalar (name, surname, adress) VALUES ('Malik','Botirov','Jizzax' );select * from talabalar // qushish
 // DELETE FROM talabalar where id="1"; SELECT * From talabalar // o'chirish berilgan qiymat buyicha
-
 // UPDATE talabalar SET name="Anvar",surname="Botirov" where id="9"; select * from talabalar // uzgartirish yangilinish qushish
 
 // select max(id) from talabalar where adress="Buxoro" // buxorolik bo'lgan id si eng yuqori
-// SELECT a.name, b.name from a.talabalar, b.yunalish
-// select name, case when nomer is null then 'yo`q' else nomer End from talabalar // case oraqli qiymati null bulan ma'lumotni topish
+
+// select name, case when nomer is null then 'yo`q' else nomer End from talabalar // case orqali qiymati null bulgan ma'lumotni topish
 // select * from talabalar where name IN ("Alisher","Sardor","Anvar") // in buyrig'i orqali  faqat berilgan qiymatlar buyicha malumatlarni chiqarish
 // select name, count(name) as ismi from talabalar group by name // nechta bir xil ismlar borligi
 // select adress, count(adress) as soni from talabalar group by adress // xar bir adressdan nechta o'quvchi borligi
@@ -56,15 +54,14 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select name, surname, datee from talabalar where datee between "1997-02-10" and "1999-01-10" // mana shu oraliqda tug'ilganlar
 // select concat(name, " ",surname) as FIO from talabalar where jinsi="w"; // jinsi buyicha topish...
 // select name, surname from talabalar where surname LIKE '%a'; // ruyhatdagi familiya oxirgi harfi a bulgan yani qiz bolalarni topish
+// select talabalar.name, talabalar.surname, talabalar.adress, yunalish.name from talabalar INNER JOIN yunalish ON talabalar.yunalish_id = yunalish.id ORDER BY yunalish.id; // ikkita jadvalni qushish.
 // SELECT talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROM talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id;
 
 
- 
-
-echo floor(-1.9)."<br>";
-echo floor(1.9)."<br>";
-echo ceil(-1.9)."<br>";
-echo ceil(1.9)."<br>";
+echo floor(-1.9)."<br>";// kichik songacha yaxlitlash. bunda -2 qaytaradi
+echo floor(1.9)."<br>";// kichik songacha yaxlitlash. bunda 1 qaytaradi
+echo ceil(-1.9)."<br>";// katta songacha yaxlitlash. bunda -1 qaytaradi
+echo ceil(1.9)."<br>";// katta songacha yaxlitlash. bunda 2 qaytaradi
 print_r($_GET);
 echo '<a href="?x=5&y=6">Bos</a><br>';
 $matn1 = "<h1>Ma\'lumot 'o\'rnida'</h1><br>"; 

@@ -15,6 +15,18 @@
   <meta charset="utf-8">
 	<title>Control panel</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+
+    body {
+      margin:0;
+      padding: 0;
+    }
+    nav {
+      width: 21%;
+     
+    }
+
+  </style>
 </head>
 <body>
 	<!--Header qismining boshlanishi-->

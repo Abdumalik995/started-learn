@@ -7,7 +7,7 @@
 	echo "yig'indi= ".$_COOKIE['a']+$_COOKIE['b']+$_COOKIE['c'];
 
 	unset($_COOKIE['c']);
-	echo "c ning qiymati = ",$_COOKIE['c']; 
+	echo "c ning qiymati = ".$_COOKIE['c']; 
 	setcookie("Hello", "salom", time()+10);
 	//setcookie("Hello", null, -1);
 
