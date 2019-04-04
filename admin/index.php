@@ -29,7 +29,10 @@
       width: 21%;
      
     }*/
-
+    
+     table img {
+      width: 30px;
+    }
   </style>
 </head>
 <body>
@@ -81,7 +84,7 @@
       <td><?php echo $talaba1['Familiyasi'] ?></td>  
       <td><?php echo $talaba1['Manzili'] ?></td>  
       <td><?php echo $talaba1['Fakulteti'] ?></td>  
-      <td><?php echo $talaba1['Img'] ?></td>  
+      <td><img src="<?php echo $talaba1['Img'] ?>"></td>  
              
         <td class="small"><a href="edit.php?id=<?=$talaba1['id']?>"><img src="img/edit.png"></a></td>
         <td class="small"><a href="delete.php?id=<?=$talaba1['id']?>"><img src="img/delete.png"></a></td>

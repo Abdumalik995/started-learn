@@ -30,19 +30,19 @@
       }
       $yunalish = $_POST['yunalish'];
     }
-    if($_FILES['fayl']['error'] == 0) {
- 	// fayl nomini uzgarivchiga tenglab olish
- 	$faylNomi = $_FILES['fayl']['name'];
- 	//fayl yuklanishi kerak bulgan serverdagi joy.
- 	$papka = dirname(_FILE_)."/rasm/".$faylNomi;
- 	//vaqtinchalk joy
- 	$kesh = $_FILES['fayl']['tmp_name'];
- 	// faylni yuklash funksiyasi
- 	$a = move_uploaded_file($kesh, $papka);
- 	//agar fayl yuklangan bulsa
+	    if($_FILES['fayl']['error'] == 0) {
+	 	// fayl nomini uzgarivchiga tenglab olish
+	 	$faylNomi = $_FILES['fayl']['name'];
+	 	//fayl yuklanishi kerak bulgan serverdagi joy.
+	 	$papka = dirname(_FILE_)."/rasm/".$faylNomi;
+	 	//vaqtinchalk joy
+	 	$kesh = $_FILES['fayl']['tmp_name'];
+	 	// faylni yuklash funksiyasi
+	 	$a = move_uploaded_file($kesh, $papka);
+	 	//agar fayl yuklangan bulsa
  }
  	/*if ($a) {
- 		echo "Fayl yuklandi: <b>$papke</b>";
+ 		echo "Fayl yuklandi: <b>$papka</b>";
  	} else {
  		echo "Xatolik";
  	} */ 
@@ -56,7 +56,7 @@
 	if(empty($name) and empty($surname)) {
         $query = '';
        } else {
-         $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`, `img`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish', '$a')";
+         $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`, `img`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish', '$papka')";
        }
        
        $result1 = @mysqli_query($db, $query);

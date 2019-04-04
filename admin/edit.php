@@ -20,11 +20,11 @@ $row = mysqli_fetch_assoc($res);
 	#mail {
     position: relative;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 70px;
     padding-top: 10px;
     padding-left: 100px;
     width: 50%;
-    height: 500px;
+    height: 550px;
     /*text-align: center;*/
     background: #fff;
     box-shadow: 0px 0px 10px #222;
@@ -76,7 +76,10 @@ $row = mysqli_fetch_assoc($res);
         border: 1px solid #ccc;
         padding:25px 10px;
         border-radius: 5px;
-    }    
+    } 
+    img {
+    	width: 40px;
+    }   
 </style>
 <body>
 
@@ -95,7 +98,8 @@ $row = mysqli_fetch_assoc($res);
             <br>
             <input type="text" name="yunalish" placeholder="Yunalish_id" value="<?=$row['yunalish_id'];?>">
             <br>
-            <input type="file" name="img" placeholder="..." value="<?=$row['img'];?>">
+           <p><input type="file" name="fayl" placeholder="" value="<?=$row['img'];?>">
+            <img src="<?=$row['img']?>"></p>
             
             <input style="display:none;" type="text" name="id" placeholder="id" value="<?=$row['id'];?>"><br>
               	
