@@ -24,7 +24,7 @@ $row = mysqli_fetch_assoc($res);
     padding-top: 10px;
     padding-left: 100px;
     width: 50%;
-    height: 440px;
+    height: 500px;
     /*text-align: center;*/
     background: #fff;
     box-shadow: 0px 0px 10px #222;
@@ -84,7 +84,7 @@ $row = mysqli_fetch_assoc($res);
         <div></div>
 			<h1>Ro`yxatni <span>o`zgartirish</span></h1>
                  
-			<form id="form" action="update.php" method="post" autocomplete="off">
+			<form id="form" action="update.php" method="post" autocomplete="off" enctype="multipart/form-data">
             <input type="text" name="name"  placeholder="Ism" value="<?=$row['name'];?>">
             
             <br>			
@@ -94,6 +94,8 @@ $row = mysqli_fetch_assoc($res);
             <input type="text" name="adress" placeholder="Manzil" value="<?=$row['adress'];?>"><br>
             <br>
             <input type="text" name="yunalish" placeholder="Yunalish_id" value="<?=$row['yunalish_id'];?>">
+            <br>
+            <input type="file" name="img" placeholder="..." value="<?=$row['img'];?>">
             
             <input style="display:none;" type="text" name="id" placeholder="id" value="<?=$row['id'];?>"><br>
               	

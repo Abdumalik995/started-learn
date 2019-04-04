@@ -1,7 +1,7 @@
 <?php 
   include "baza.php";
 
-      $queryJoin = "SELECT talaba.id AS id, talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili,  fak.name AS Fakulteti FROM talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
+      $queryJoin = "SELECT talaba.id AS id, talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili, talaba.img AS Img,  fak.name AS Fakulteti FROM talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
       $res = mysqli_query($db, $queryJoin);
       
       $talabalar1 = array();
@@ -68,6 +68,7 @@
     <th>Familiyasi</th>    
     <th>Manzili</th>
     <th>Fakulteti</th>
+    <th>Img</th>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
@@ -80,6 +81,7 @@
       <td><?php echo $talaba1['Familiyasi'] ?></td>  
       <td><?php echo $talaba1['Manzili'] ?></td>  
       <td><?php echo $talaba1['Fakulteti'] ?></td>  
+      <td><?php echo $talaba1['Img'] ?></td>  
              
         <td class="small"><a href="edit.php?id=<?=$talaba1['id']?>"><img src="img/edit.png"></a></td>
         <td class="small"><a href="delete.php?id=<?=$talaba1['id']?>"><img src="img/delete.png"></a></td>

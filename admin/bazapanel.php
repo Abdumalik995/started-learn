@@ -128,7 +128,7 @@
         <div></div>
 			<h1>Talk to <span> me </span></h1>
             <p><span class="red">*</span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
-			<form id="form" action="insert.php" method="post" autocomplete="off">
+			<form id="form" action="insert.php" method="post" autocomplete="off" enctype="multipart/form-data">
             <input type="text" name="name"  placeholder="name here">
             <span class="red"> * <?php echo $nameErr; ?></span>
             <br>			
@@ -152,7 +152,8 @@
                 <option value="3">Dasturiy</option>
                 <option value="4">Aloqalash</option>
                 <option value="5">Radio va mobil</option>
-            </select> <br>
+            </select> <br><br>
+            <input type="file" name="fayl" accept=".jpg, .jpeg, .png"><br>
 						
 			<input id="sub" type="submit" name="sub" value="SUBSCRIBE">
 		</form>
