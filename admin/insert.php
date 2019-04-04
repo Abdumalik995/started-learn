@@ -40,11 +40,12 @@
  	// faylni yuklash funksiyasi
  	$a = move_uploaded_file($kesh, $papka);
  	//agar fayl yuklangan bulsa
- 	if ($a) {
+ }
+ 	/*if ($a) {
  		echo "Fayl yuklandi: <b>$papke</b>";
  	} else {
  		echo "Xatolik";
- 	}  
+ 	} */ 
 
     function test_input($data) {
       $data = trim($data);
@@ -55,7 +56,7 @@
 	if(empty($name) and empty($surname)) {
         $query = '';
        } else {
-         $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish')";
+         $query = "INSERT INTO talabalar (`name`, `surname` , `adress` , `nomer` , `datee` , `yunalish_id`, `img`) VALUES ('$name', '$surname', '$adress', '$nomer', '$datee', '$yunalish', '$a')";
        }
        
        $result1 = @mysqli_query($db, $query);
