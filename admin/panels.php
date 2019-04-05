@@ -59,7 +59,7 @@
 <section>
 	<div class="content">
 	<h1>Semestr reyning natijalari</h1>
-	<a href="bazapanel.php" class="add">Qushish</a><br><br>
+	<a href="bazapanel.php" class="qushish3.php">Qushish</a><br><br>
 <table>
   <tr>
   	 <th class="small">N</th>

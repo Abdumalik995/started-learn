@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>bazap php</title>
-    <link rel="stylesheet" type="text/css" href="css/astyle.css">
+	<link rel="stylesheet" type="text/css" href="css/astyle.css">
 </head>
 
 <body>
