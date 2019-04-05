@@ -73,7 +73,7 @@
                 <?php foreach ($fak as $val) { ?>
                     <td><?php echo $val ?></td>
                         <?php } ?>     
-          	<td class="small"><a href="edit.php?id=<?=$fak['id']?>"><img src="img/edit.png"></a></td>
+          	<td class="small"><a href="editfak.php?id=<?=$fak['id']?>"><img src="img/edit.png"></a></td>
         	<td class="small"><a href="deletefak.php?id=<?=$fak['id']?>"><img src="img/delete.png"></a></td>
    
   		</tr>
