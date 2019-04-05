@@ -1,4 +1,9 @@
-
+.add {
+    
+    padding: 10px;
+    border-radius: 5px;
+    background: lightblue;
+}
 
 header {
     background-color: #37b0ea;

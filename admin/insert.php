@@ -2,7 +2,6 @@
 	include "baza.php";
 
 	if(isset($_POST['sub'])) {
-
       if(empty($_POST['name'])) {
         header("Location: bazapanel.php");
       }else {
@@ -38,14 +37,15 @@
 	 	//vaqtinchalk joy
 	 	$kesh = $_FILES['fayl']['tmp_name'];
 	 	// faylni yuklash funksiyasi
-	 	$a = move_uploaded_file($kesh, $papka);
-	 	//agar fayl yuklangan bulsa
+	 	$a = move_uploaded_file($kesh, $papka);	 	
  }
- 	/*if ($a) {
- 		echo "Fayl yuklandi: <b>$papka</b>";
- 	} else {
- 		echo "Xatolik";
- 	} */ 
+ 	if (isset($_POST['faksub'])) {
+ 		if(empty($_POST['fakname'])) {
+        header("Location: qushish1.php");
+      } else {
+        $fakname = mysqli_escape_string($db, test_input($_POST["name"]));
+      }
+ 	}
 
     function test_input($data) {
       $data = trim($data);

@@ -23,11 +23,11 @@
     /*body {
       margin:0;
       padding: 0;
-    }
+    }*/
     nav {
       width: 21%;
      
-    }*/
+    }
 
   </style>
 </head>
@@ -59,6 +59,7 @@
 <section>
 	<div class="content">
 	<h1>Semestr reyning natijalari</h1>
+	<a href="bazapanel.php" class="add">Qushish</a><br><br>
 <table>
   <tr>
   	 <th class="small">N</th>
@@ -67,23 +68,21 @@
     <th>Yunalish id</th>    
     <th>Fan id</th>    
     <th>Reyting</th>    
+    <th>Edit</th>    
+    <th>Delete</th>    
     
     
   </tr>
   
     <?php foreach ($semestr as  $sem) { ?>         
         <tr>
-                <?php foreach ($sem as $val) { ?>
-                    <td><?php echo $val ?></td>
-                        <?php } ?>
-                    
-                 
-          
-                  
-      
-        
+            <?php foreach ($sem as $val) { ?>
+            <td><?php echo $val ?></td>
+           	<?php } ?>    
+         	<td class="small"><a href="edit.php?id=<?=$sem['id']?>"><img src="img/edit.png"></a></td>
+        	<td class="small"><a href="delete.php?id=<?=$sem['id']?>"><img src="img/delete.png"></a></td>
    
-  </tr>
+  	</tr>
   <?php } ?>
     
 </table>

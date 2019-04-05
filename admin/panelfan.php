@@ -20,11 +20,11 @@
     /*body {
       margin:0;
       padding: 0;
-    }
+    }*/
     nav {
       width: 21%;
       
-    }*/
+    }
 
   </style>
 </head>
@@ -56,6 +56,7 @@
 <section>
 	<div class="content">
 	<h1>Fanlar</h1>
+	<a href="" class="add">Qushish</a><br><br>
 <table>
   <tr>
   	 <th class="small">N</th>
@@ -63,6 +64,8 @@
     <th>Uqituvchi</th>    
     <th>Kurs</th>    
     <th>Soat</th>    
+    <th>Edit</th>    
+    <th>Delete</th>    
         
     
     
@@ -74,13 +77,9 @@
                     <td><?php echo $val ?></td>
                         <?php } ?>
                     
-                 
-          
-                  
-      
-        
-   
-  </tr>
+        <td class="small"><a href="edit.php?id=<?=$fan['id']?>"><img src="img/edit.png"></a></td>
+        <td class="small"><a href="delete.php?id=<?=$fan['id']?>"><img src="img/delete.png"></a></td> 
+  		</tr>
   <?php } ?>
     
 </table>

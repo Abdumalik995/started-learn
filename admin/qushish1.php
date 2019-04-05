@@ -1,16 +1,4 @@
-<?php 
-include "baza.php";
-if(isset($_GET['id'])) {
-	$id = $_GET['id'];
-}
-
-$sql = "SELECT * FROM talabalar WHERE id=$id";
-$res = mysqli_query($db, $sql);
-$row = mysqli_fetch_assoc($res);
-
- ?>
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>bazap php</title>
@@ -20,11 +8,11 @@ $row = mysqli_fetch_assoc($res);
 	#mail {
     position: relative;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 30px;
     padding-top: 10px;
     padding-left: 100px;
-    width: 50%;
-    /*height: 550px;
+    width: 70%;
+    /*height: 650px;
     text-align: center;*/
     background: #fff;
     box-shadow: 0px 0px 10px #222;
@@ -76,38 +64,25 @@ $row = mysqli_fetch_assoc($res);
         border: 1px solid #ccc;
         padding:25px 10px;
         border-radius: 5px;
-    } 
-    img {
-    	width: 40px;
-    }   
+    }    
+    
 </style>
 <body>
 
 	<div id="mail">
         <div></div>
-			<h1>Ro`yxatni <span>o`zgartirish</span></h1>
-                 
-			<form id="form" action="update.php" method="post" autocomplete="off" enctype="multipart/form-data">
-            <input type="text" name="name"  placeholder="Ism" value="<?=$row['name'];?>">
-            
+			<h1>Fakultet <span> ma'lumotlari </span></h1>               
+			<form id="form" action="insert.php" method="post" autocomplete="off" enctype="multipart/form-data">
+            <input type="text" name="fakname"  placeholder="Fak name here">
+            <span class="red"></span>
             <br>			
-			<input type="text" name="surname" placeholder="Familiya" value="<?=$row['surname'];?>">
-            
+			<input type="text" name="t_soni" placeholder="t_soni">
+            <span class="red"></span>
             <br>
-            <input type="text" name="adress" placeholder="Manzil" value="<?=$row['adress'];?>"><br>
-            <br>
-            <input type="text" name="yunalish" placeholder="Yunalish_id" value="<?=$row['yunalish_id'];?>">
-            <br>
-           	<p>
-           		<input type="file" name="fayl" placeholder="" value="">
-            	<img src="<?=$row['img']?>">
-            	
-        	</p>
-            
-            <input style="display:none;" type="text" name="id" placeholder="id" value="<?=$row['id'];?>"><br>
-              	
-			<input id="sub" type="submit" name="sub" value="SUBSCRIBE">
-		</form>
+      
+            <br>   
+						
+			<input id="sub" type="submit" name="faksub" value="Qushish">
         
 		</div>
    

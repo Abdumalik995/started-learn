@@ -67,8 +67,8 @@
     padding-top: 10px;
     padding-left: 100px;
     width: 70%;
-    height: 650px;
-    /*text-align: center;*/
+    /*height: 650px;
+    text-align: center;*/
     background: #fff;
     box-shadow: 0px 0px 10px #222;
     overflow: hidden;
@@ -126,7 +126,7 @@
 
 	<div id="mail">
         <div></div>
-			<h1>Talk to <span> me </span></h1>
+			<h1>Ruyhatga <span> olish </span></h1>
             <p><span class="red">*</span><span style="color:blue"> To`ldirilishi shart bo'lgan maydonlar.</span></p>       
 			<form id="form" action="insert.php" method="post" autocomplete="off" enctype="multipart/form-data">
             <input type="text" name="name"  placeholder="name here">
@@ -155,7 +155,7 @@
             </select> <br><br>
             <input type="file" name="fayl" accept=".jpg, .jpeg, .png"><br>
 						
-			<input id="sub" type="submit" name="sub" value="SUBSCRIBE">
+			<input id="sub" type="submit" name="sub" value="Registratsiya">
 		</form>
         
 		</div>

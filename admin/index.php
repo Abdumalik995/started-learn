@@ -24,11 +24,11 @@
     /*body {
       margin:0;
       padding: 0;
-    }
+    }*/
     nav {
       width: 21%;
      
-    }*/
+    }
     
      table img {
       width: 30px;
@@ -63,7 +63,7 @@
 <section>
 	<div class="content">
 	<h1>Asosiy ma'lumotlar</h1>
-  <a href="bazapanel.php">Qushish</a><br><br>
+  <a href="bazapanel.php" class="add">Qushish</a><br><br>
 <table>
   <tr>
   	 <th class="small">N</th>
