@@ -91,7 +91,7 @@ $row = mysqli_fetch_assoc($res);
             <input type="text" name="name"  placeholder="Fan nomi" value="<?=$row['name'];?>">
             
             <br>            
-            <input type="text" name="t_soni" placeholder="O`qituvchi" value="<?=$row['teacher'];?>">            
+            <input type="text" name="teacher" placeholder="O`qituvchi" value="<?=$row['teacher'];?>">            
             <br>
             <input type="text" name="kurs" placeholder="Kurs" value="<?=$row['kurs'];?>">            
             <br>
