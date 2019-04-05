@@ -88,14 +88,17 @@ $row = mysqli_fetch_assoc($res);
             <h1>Ro`yxatni <span>o`zgartirish</span></h1>
                  
             <form id="form" action="update2.php" method="post" autocomplete="off">
-            <input type="text" name="fakname"  placeholder="Fakultetnomi" value="<?=$row['name'];?>">
+            <input type="text" name="name"  placeholder="Fan nomi" value="<?=$row['name'];?>">
             
             <br>            
-            <input type="text" name="t_soni" placeholder="Talabalar soni" value="<?=$row['t_soni'];?>">
-            
+            <input type="text" name="t_soni" placeholder="O`qituvchi" value="<?=$row['teacher'];?>">            
+            <br>
+            <input type="text" name="kurs" placeholder="Kurs" value="<?=$row['kurs'];?>">            
+            <br>
+            <input type="text" name="soat" placeholder="Soat" value="<?=$row['soat'];?>">            
             <br>
             
-            <input style="display:none;" type="text" name="fakid" placeholder="id" value="<?=$row['id'];?>"><br>
+            <input style="display:none;" type="text" name="id" placeholder="id" value="<?=$row['id'];?>"><br>
                 
             <input id="sub" type="submit" name="faksub" value="Yangilash">
         </form>
