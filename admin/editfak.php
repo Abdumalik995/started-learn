@@ -87,7 +87,7 @@ $row = mysqli_fetch_assoc($res);
         <div></div>
             <h1>Ro`yxatni <span>o`zgartirish</span></h1>
                  
-            <form id="form" action="update.php" method="post" autocomplete="off" enctype="multipart/form-data">
+            <form id="form" action="update.php" method="post" autocomplete="off">
             <input type="text" name="fakname"  placeholder="Fakultetnomi" value="<?=$row['name'];?>">
             
             <br>            
@@ -95,9 +95,9 @@ $row = mysqli_fetch_assoc($res);
             
             <br>
             
-            <input style="display:none;" type="text" name="id" placeholder="id" value="<?=$row['id'];?>"><br>
+            <input style="display:none;" type="text" name="fakid" placeholder="id" value="<?=$row['id'];?>"><br>
                 
-            <input id="sub" type="submit" name="sub" value="Yangilash">
+            <input id="sub" type="submit" name="faksub" value="Yangilash">
         </form>
         
         </div>

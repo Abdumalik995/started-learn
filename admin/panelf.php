@@ -7,6 +7,8 @@
        while($row = mysqli_fetch_assoc($res)) {
         $yunalish[] = $row;
        }
+
+       $i = 1;
  ?>
 
  <!DOCTYPE html>
@@ -70,9 +72,12 @@
   
     <?php foreach ($yunalish as  $fak) { ?>         
         <tr>
-                <?php foreach ($fak as $val) { ?>
+        	<td><?php echo $i; $i++ ?></td>
+        	<td><?php echo $fak['name'] ?></td>        	
+        	<td><?php echo $fak['t_soni'] ?></td>        	
+                <!-- <?php foreach ($fak as $val) { ?>
                     <td><?php echo $val ?></td>
-                        <?php } ?>     
+                        <?php } ?>  -->    
           	<td class="small"><a href="editfak.php?id=<?=$fak['id']?>"><img src="img/edit.png"></a></td>
         	<td class="small"><a href="deletefak.php?id=<?=$fak['id']?>"><img src="img/delete.png"></a></td>
    
