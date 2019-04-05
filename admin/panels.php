@@ -79,8 +79,8 @@
             <?php foreach ($sem as $val) { ?>
             <td><?php echo $val ?></td>
            	<?php } ?>    
-         	<td class="small"><a href="edit.php?id=<?=$sem['id']?>"><img src="img/edit.png"></a></td>
-        	<td class="small"><a href="delete.php?id=<?=$sem['id']?>"><img src="img/delete.png"></a></td>
+         	<td class="small"><a href="editsems.php?id=<?=$sem['id']?>"><img src="img/edit.png"></a></td>
+        	<td class="small"><a href="deletesems.php?id=<?=$sem['id']?>"><img src="img/delete.png"></a></td>
    
   	</tr>
   <?php } ?>
