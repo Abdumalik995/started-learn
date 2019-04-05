@@ -56,7 +56,7 @@
 <section>
 	<div class="content">
 	<h1>Fanlar</h1>
-	<a href="" class="add">Qushish</a><br><br>
+	<a href="qushish2.php" class="add">Qushish</a><br><br>
 <table>
   <tr>
   	 <th class="small">N</th>
@@ -77,8 +77,8 @@
                     <td><?php echo $val ?></td>
                         <?php } ?>
                     
-        <td class="small"><a href="edit.php?id=<?=$fan['id']?>"><img src="img/edit.png"></a></td>
-        <td class="small"><a href="delete.php?id=<?=$fan['id']?>"><img src="img/delete.png"></a></td> 
+        <td class="small"><a href="editfan.php?id=<?=$fan['id']?>"><img src="img/edit.png"></a></td>
+        <td class="small"><a href="deletefan.php?id=<?=$fan['id']?>"><img src="img/delete.png"></a></td> 
   		</tr>
   <?php } ?>
     

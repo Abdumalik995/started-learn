@@ -4,7 +4,7 @@ if(isset($_GET['id'])) {
     $id = $_GET['id'];
 }
 
-$sql = "SELECT * FROM yunalish WHERE id=$id";
+$sql = "SELECT * FROM fanlar WHERE id=$id";
 $res = mysqli_query($db, $sql);
 $row = mysqli_fetch_assoc($res);
 
@@ -87,7 +87,7 @@ $row = mysqli_fetch_assoc($res);
         <div></div>
             <h1>Ro`yxatni <span>o`zgartirish</span></h1>
                  
-            <form id="form" action="update1.php" method="post" autocomplete="off">
+            <form id="form" action="update2.php" method="post" autocomplete="off">
             <input type="text" name="fakname"  placeholder="Fakultetnomi" value="<?=$row['name'];?>">
             
             <br>            

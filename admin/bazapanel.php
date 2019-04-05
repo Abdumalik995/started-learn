@@ -147,7 +147,7 @@
            
             Fakultetni tanlang:<select name="yunalish">
                 <option></option>
-                <option value="1">KIF</option>
+                <option value="10">KIF</option>
                 <option value="2">Telekom</option>
                 <option value="3">Dasturiy</option>
                 <option value="4">Aloqalash</option>
