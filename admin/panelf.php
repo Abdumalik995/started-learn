@@ -18,14 +18,22 @@
 	<title>Control panel</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style type="text/css">
-
-   /* body {
+ 	body {
       margin:0;
       padding: 0;
-    }*/
+    }
+    .hero {
+    display: flex;
+    justify-content: space-between;
+    }
     nav {
       width: 21%;
+    
      
+    }
+    
+     table img {
+      width: 30px;
     }
 
   </style>
@@ -55,38 +63,37 @@
 	</ul>
 </nav>
 <!--chap blokni boshlanishi-->
-<section>
+<div class="hero">
+	<section>
 	<div class="content">
 	<h1>Fakultetlar</h1>
 	<a href="qushish1.php" class="add">Qushish</a><br><br>
-<table>
-  <tr>
-  	 <th class="small">N</th>
-    <th>Nomi</th>
-    <th>Talabalar soni</th>    
-    <th>Edit</th>    
-    <th>Delete</th>    
-    
-    
-  </tr>
-  
-    <?php foreach ($yunalish as  $fak) { ?>         
-        <tr>
-        	<td><?php echo $i; $i++ ?></td>
-        	<td><?php echo $fak['name'] ?></td>        	
-        	<td><?php echo $fak['t_soni'] ?></td>        	
-                <!-- <?php foreach ($fak as $val) { ?>
-                    <td><?php echo $val ?></td>
-                        <?php } ?>  -->    
-          	<td class="small"><a href="editfak.php?id=<?=$fak['id']?>"><img src="img/edit.png"></a></td>
-        	<td class="small"><a href="deletefak.php?id=<?=$fak['id']?>"><img src="img/delete.png"></a></td>
-   
-  		</tr>
-  <?php } ?>
-    
-</table>
-	</div>
-</section>
+	<table>
+	  <tr>
+	  	 <th class="small">N</th>
+	    <th>Nomi</th>
+	    <th>Talabalar soni</th>    
+	    <th>Edit</th>    
+	    <th>Delete</th>    
+	    
+	    
+	  </tr>
+	  
+	    <?php foreach ($yunalish as  $fak) { ?>         
+	        <tr>
+	        	<td><?php echo $i; $i++ ?></td>
+	        	<td><?php echo $fak['name'] ?></td>        	
+	        	<td><?php echo $fak['t_soni'] ?></td>                  
+	          	<td class="small"><a href="editfak.php?id=<?=$fak['id']?>"><img src="img/edit.png"></a></td>
+	        	<td class="small"><a href="deletefak.php?id=<?=$fak['id']?>"><img src="img/delete.png"></a></td>
+	   
+	  		</tr>
+	  <?php } ?>
+	    
+	</table>
+		</div>
+	</section>
+</div>
 <!--chap blokni tugashi-->
 <!--footer qismini boshlanishi-->
 <footer>

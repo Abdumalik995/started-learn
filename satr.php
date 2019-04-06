@@ -67,7 +67,10 @@ echo '<a href="?x=5&y=6">Bos</a><br>';
 $matn1 = "<h1>Ma\'lumot 'o\'rnida'</h1><br>"; 
 echo htmlspecialchars($matn1, ENT_COMPAT);
 echo htmlspecialchars($matn1, ENT_QUOTES);
-echo htmlspecialchars($matn1, ENT_NOQUOTES);
+echo htmlspecialchars($matn1, ENT_NOQUOTES).'<br>';
+echo $matn1.'<br>';
+echo strip_tags($matn1);
+
 //echo htmlspecialchars($matn1, ENT_NOQUOTES); html taglarni brauzer uqimasligi ularni kodga aylantirib ketishi
 //echo stripcslashes($matn1);
 /*=====*/
@@ -117,3 +120,23 @@ test();*/
  	</form>
  </body>
  </html>
+
+ <?php
+/*// o’zgarmasni aniqlaymiz PASSWORD
+define("PASSWORD","qwerty");
+// rеgistrlanmagan PI o’zgarmasni qiymatini aniqlaymiz 3.14
+define("PI","3.14", True);
+// PASSWORD o’zgarmas qiymatini olamiz, ya'ni qwerty
+echo (PASSWORD);
+// bu ham qwerty ni chiqaradi
+echo constant("PASSWORD");
+echo (password);
+ password ni chiqaradi va biz rеgistrlangan o’zgarmas PASSWORD ni
+kutgandik.
+//echo pi;
+// 3.14 ni chiqaradi, chunki o’zgarmas PI rеgistrlanmagan va
+//aniqlangan.*/
+$next = "bor<br>";
+echo $next;
+echo '$next';
+?>

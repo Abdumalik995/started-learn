@@ -10,6 +10,7 @@
        while($row = mysqli_fetch_assoc($res)) {
         $semestr[] = $row;
        }
+       $i = 1;
  ?>
 
  <!DOCTYPE html>
@@ -20,13 +21,22 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style type="text/css">
 
-    /*body {
+    body {
       margin:0;
       padding: 0;
-    }*/
+    }
+    .hero {
+    display: flex;
+    justify-content: space-between;
+    }
     nav {
       width: 21%;
+    
      
+    }
+    
+     table img {
+      width: 30px;
     }
 
   </style>
@@ -44,7 +54,8 @@
 		</header>
 <!--header qismining tugashi-->
 <!--chap blokni boshlanishi-->
-<nav>
+<div class="hero">
+	<nav>
 	<h1>Menyular bloki</h1>
 	<ul>
 		<li><a href="index.php">Talabalar</a></li>
@@ -54,40 +65,44 @@
 			<li><a href="#">Tizimdan chiqish</a></li>
    
 	</ul>
-</nav>
-<!--chap blokni boshlanishi-->
-<section>
-	<div class="content">
-	<h1>Semestr reyning natijalari</h1>
-	<a href="bazapanel.php" class="qushish3.php">Qushish</a><br><br>
-<table>
-  <tr>
-  	 <th class="small">N</th>
-    <th>Semestr R</th>
-    <th>Talaba id</th>    
-    <th>Yunalish id</th>    
-    <th>Fan id</th>    
-    <th>Reyting</th>    
-    <th>Edit</th>    
-    <th>Delete</th>    
-    
-    
-  </tr>
-  
-    <?php foreach ($semestr as  $sem) { ?>         
-        <tr>
-            <?php foreach ($sem as $val) { ?>
-            <td><?php echo $val ?></td>
-           	<?php } ?>    
-         	<td class="small"><a href="editsems.php?id=<?=$sem['id']?>"><img src="img/edit.png"></a></td>
-        	<td class="small"><a href="deletesems.php?id=<?=$sem['id']?>"><img src="img/delete.png"></a></td>
-   
-  	</tr>
-  <?php } ?>
-    
-</table>
-	</div>
-</section>
+	</nav>
+	<!--chap blokni boshlanishi-->
+	<section>
+		<div class="content">
+		<h1>Semestr reyning natijalari</h1>
+		<a href="qushish3.php" class="add">Qushish</a><br><br>
+	<table>
+	  <tr>
+	  	 <th class="small">N</th>
+	    <th>Semestr R</th>
+	    <th>Talaba id</th>    
+	    <th>Yunalish id</th>    
+	    <th>Fan id</th>    
+	    <th>Reyting</th>    
+	    <th>Edit</th>    
+	    <th>Delete</th>    
+	    
+	    
+	  </tr>
+	  
+	    <?php foreach ($semestr as  $sem) { ?>         
+	        <tr>
+	            <td><?php echo $i; $i++; ?></td>  
+	            <td><?php echo $sem['name'];?></td>  
+	            <td><?php echo $sem['id_talaba'];?></td>  
+	            <td><?php echo $sem['id_yunalish'];?></td>  
+	            <td><?php echo $sem['id_fan'];?></td>  
+	            <td><?php echo $sem['reyting'];?></td>  
+	         	<td class="small"><a href="editsems.php?id=<?=$sem['id']?>"><img src="img/edit.png"></a></td>
+	        	<td class="small"><a href="deletesems.php?id=<?=$sem['id']?>"><img src="img/delete.png"></a></td>
+	   
+	  	</tr>
+	  <?php } ?>
+	    
+	</table>
+		</div>
+	</section>
+</div>
 <!--chap blokni tugashi-->
 <!--footer qismini boshlanishi-->
 <footer>

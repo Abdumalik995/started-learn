@@ -7,6 +7,7 @@
        while($row = mysqli_fetch_assoc($res)) {
         $fanlar[] = $row;
        }
+       $i = 1;
  ?>
 
  <!DOCTYPE html>
@@ -17,13 +18,22 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style type="text/css">
 
-    /*body {
+    body {
       margin:0;
       padding: 0;
-    }*/
+    }
+    .hero {
+    display: flex;
+    justify-content: space-between;
+    }
     nav {
       width: 21%;
-      
+    
+     
+    }
+    
+     table img {
+      width: 30px;
     }
 
   </style>
@@ -41,7 +51,8 @@
 		</header>
 <!--header qismining tugashi-->
 <!--chap blokni boshlanishi-->
-<nav>
+<div class="hero">
+	<nav>
 	<h1>Menyular bloki</h1>
 	<ul>
 		<li><a href="index.php">Talabalar</a></li>
@@ -51,40 +62,42 @@
 			<li><a href="#">Tizimdan chiqish</a></li>
    
 	</ul>
-</nav>
-<!--chap blokni boshlanishi-->
-<section>
-	<div class="content">
-	<h1>Fanlar</h1>
-	<a href="qushish2.php" class="add">Qushish</a><br><br>
-<table>
-  <tr>
-  	 <th class="small">N</th>
-    <th>Nomi</th>
-    <th>Uqituvchi</th>    
-    <th>Kurs</th>    
-    <th>Soat</th>    
-    <th>Edit</th>    
-    <th>Delete</th>    
-        
-    
-    
-  </tr>
-  
-    <?php foreach ($fanlar as  $fan) { ?>         
-        <tr>
-                <?php foreach ($fan as $val) { ?>
-                    <td><?php echo $val ?></td>
-                        <?php } ?>
-                    
-        <td class="small"><a href="editfan.php?id=<?=$fan['id']?>"><img src="img/edit.png"></a></td>
-        <td class="small"><a href="deletefan.php?id=<?=$fan['id']?>"><img src="img/delete.png"></a></td> 
-  		</tr>
-  <?php } ?>
-    
-</table>
-	</div>
-</section>
+	</nav>
+	<!--chap blokni boshlanishi-->
+	<section>
+		<div class="content">
+		<h1>Fanlar</h1>
+		<a href="qushish2.php" class="add">Qushish</a><br><br>
+	<table>
+	  <tr>
+	  	 <th class="small">N</th>
+	    <th>Nomi</th>
+	    <th>Uqituvchi</th>    
+	    <th>Kurs</th>    
+	    <th>Soat</th>    
+	    <th>Edit</th>    
+	    <th>Delete</th>    
+	        
+	    
+	    
+	  </tr>
+	  
+	    <?php foreach ($fanlar as  $fan) { ?>         
+	        <tr>
+	        	<td><?php echo $i; $i++ ?></td>
+	        	<td><?php echo $fan['name'] ?></td>
+	        	<td><?php echo $fan['teacher'] ?></td>
+	        	<td><?php echo $fan['kurs'] ?></td>
+	        	<td><?php echo $fan['soat'] ?></td>                
+	        	<td class="small"><a href="editfan.php?id=<?=$fan['id']?>"><img src="img/edit.png"></a></td>
+	        	<td class="small"><a href="deletefan.php?id=<?=$fan['id']?>"><img src="img/delete.png"></a></td> 
+	  		</tr>
+	  	<?php } ?>
+	    
+	</table>
+		</div>
+	</section>
+</div>
 <!--chap blokni tugashi-->
 <!--footer qismini boshlanishi-->
 <footer>

@@ -1,7 +1,7 @@
 <?php 
 /*echo "<pre>";
  print_r($_FILES);
- echo "</pre>";*/
+echo "</pre>";*/
 // agar forma orqali kelgan fileda xatolik bulmasa
  if($_FILES['fayl']['error'] == 0) {
  	// fayl nomini uzgarivchiga tenglab olish
@@ -19,4 +19,7 @@
  		echo "Xatolik";
  	}
  }
+
+
  ?>
+ 

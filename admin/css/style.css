@@ -6,16 +6,18 @@
 }
 
 header {
-    background-color: #37b0ea;
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
     height: 90px;
 }
 header ul {
-    float: right;
-    width: 300px;
+    display: flex;
+    justify-content: space-around;
+   
 }
 header ul li {
-    float: right;
+   
     padding-right: 20px;
 }
 header img {
@@ -24,11 +26,15 @@ header img {
 h1, em {
     text-align: center;
 }
+.hero {
+    display: flex;
+    justify-content: space-between;
+}
 nav {
     background-color: #9fcee5;
   
     height: 600px;
-    float: left;
+   
     line-height: 30px;
 }
 nav ul li a {
@@ -45,7 +51,7 @@ nav ul li a:hover {
 section {
     width: 77%;
     background-color: #ffffff;  
-    float: left;
+    
 }
 .content {
     padding: 10px;
