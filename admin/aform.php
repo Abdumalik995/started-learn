@@ -4,16 +4,16 @@
     if(isset($_POST['subr'])) {
 
       if(empty($_POST['login'])) {
-        $loginErr = "Login yoki parol xato";
+        $loginErr = "Loginni kiriting";
         //header("Location: aform.php");
       }else {
-        $login =test_input($_POST["login"]);
+        $login = test_input($_POST["login"]);
       }
       if(empty($_POST['parol'])) {
-        $parolErr = "Login yoki parol xato";
+        
         //header("Location: aform.php");
       }else {
-        $parol = md5($_POST["parol"]);
+        $parol = md5((($_POST["parol"])));
       }      
     }
       
