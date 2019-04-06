@@ -7,13 +7,13 @@
         $loginErr = "Login yoki parol xato";
         //header("Location: aform.php");
       }else {
-        $login = mysqli_escape_string($db, test_input($_POST["login"]));
+        $login =test_input($_POST["login"]);
       }
       if(empty($_POST['parol'])) {
         $parolErr = "Login yoki parol xato";
         //header("Location: aform.php");
       }else {
-        $parol = mysqli_escape_string($db, test_input($_POST["parol"]));
+        $parol = md5($_POST["parol"]);
       }      
     }
       
@@ -32,12 +32,22 @@
        $result1 = @mysqli_query($db, $query);
 
        if($result1) {           
-        //header("Location: index.php");
+        header("Location: index.php");
        } else {
         //echo "Ro'yhatga olishda xatolik yuzaga keldi!";
        } 
- 
-    
+    $sql = "Select * from user";
+    $res = mysqli_query($db, $sql);
+    $users = array();
+    while ($row = mysqli_fetch_assoc($res)) {
+        $users[] = $row;
+    };
+        foreach ($users as $user) { 
+            if($login == $user['login']) {
+            $loginErr = "Bunday login mavjud";
+        }   
+    }
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -109,10 +119,10 @@
             <h1>Demo <span> Ver </span></h1>               
             <form id="form" action="#" method="post" autocomplete="off">
             <input type="text" name="login"  placeholder="Login here">
-            <span class="red"> * <?php echo $loginErr; ?></span>
+            <span class="red"> * <?php echo $loginErr;?></span>
             <br>            
             <input type="password" name="parol" placeholder="password here">
-            <span class="red"> *  <?php echo $parolErr; ?></span>
+            <span class="red"></span>
             <br>     
             <br>                    
             <input id="sub" type="submit" name="subr" value="Kirish">        
