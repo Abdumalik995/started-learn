@@ -34,7 +34,11 @@
             if($login == $user['login'] and $parol == $user['parol'] ) {
             header("Location: index.php");
         } else {
-           $loginErr = "Login yoki parol xato";
+            $loginErr1 = "Login yoki parol xato";
+            if (empty($login) and empty($parol)) {
+                $loginErr1 = "";
+            }
+                
         } 
     }
 
@@ -42,15 +46,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>bazap php</title>
+	<title>Kirish</title>
     <link rel="stylesheet" type="text/css" href="css/astyle.css">
 </head>
 
 <body>
 
+
 	 <div id="mail" style="width: 400px; margin-top: 50px; padding: 15px">
         
-            <h1>Signing <span> In </span></h1>               
+            <h1>Kir<span>ish</span></h1>
+            <p><span class="red"><?php echo $loginErr1; ?></span></p>              
             <form id="form" action="#" method="post" autocomplete="off">
             <input type="text" name="login"  placeholder="Login here">
             <span class="red"> * <?php echo $loginErr;?></span>
