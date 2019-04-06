@@ -1,4 +1,44 @@
+<?php 
+    include "baza.php";
 
+    if(isset($_POST['subr'])) {
+
+      if(empty($_POST['login'])) {
+        $loginErr = "Login yoki parol xato";
+        //header("Location: aform.php");
+      }else {
+        $login = mysqli_escape_string($db, test_input($_POST["login"]));
+      }
+      if(empty($_POST['parol'])) {
+        $parolErr = "Login yoki parol xato";
+        //header("Location: aform.php");
+      }else {
+        $parol = mysqli_escape_string($db, test_input($_POST["parol"]));
+      }      
+    }
+      
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+    if(empty($login) and empty($parol)) {
+        $query = '';
+       } else {
+         $query = "INSERT INTO user (`login`, `parol`) VALUES ('$login', '$parol')";
+       }
+       
+       $result1 = @mysqli_query($db, $query);
+
+       if($result1) {           
+        //header("Location: index.php");
+       } else {
+        //echo "Ro'yhatga olishda xatolik yuzaga keldi!";
+       } 
+ 
+    
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,18 +104,18 @@
         <div class="content">
             <h1>Kirish</h1>
             
-            <div id="mail" style="width: 400px; margin-top: 50px">
+            <div id="mail" style="width: 400px; margin-top: 50px; padding: 15px">
         
             <h1>Demo <span> Ver </span></h1>               
-            <form id="form" action="inserthero.php" method="post" autocomplete="off">
+            <form id="form" action="#" method="post" autocomplete="off">
             <input type="text" name="login"  placeholder="Login here">
-            <span class="red"> * </span>
+            <span class="red"> * <?php echo $loginErr; ?></span>
             <br>            
             <input type="password" name="parol" placeholder="password here">
-            <span class="red"> * </span>
+            <span class="red"> *  <?php echo $parolErr; ?></span>
             <br>     
             <br>                    
-            <input id="sub" type="submit" name="submit" value="Kirish">        
+            <input id="sub" type="submit" name="subr" value="Kirish">        
         </div>
    
           

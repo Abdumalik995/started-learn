@@ -29,11 +29,11 @@
        
        $result1 = @mysqli_query($db, $query);
 
-       if($result1) {
+       if($result1) {       	
         header("Location: index.php");
        } else {
         echo "Ro'yhatga olishda xatolik yuzaga keldi!";
        } 
- ?>
-	}
+ 
+	
  ?>
