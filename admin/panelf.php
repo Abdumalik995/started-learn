@@ -21,6 +21,7 @@
  	body {
       margin:0;
       padding: 0;
+      background-color: #37b0ea;
     }
     .hero {
     display: flex;
@@ -51,6 +52,7 @@
 		</header>
 <!--header qismining tugashi-->
 <!--chap blokni boshlanishi-->
+<div class="hero">
 <nav>
 	<h1>Menyular bloki</h1>
 	<ul>
@@ -63,7 +65,7 @@
 	</ul>
 </nav>
 <!--chap blokni boshlanishi-->
-<div class="hero">
+
 	<section>
 	<div class="content">
 	<h1>Fakultetlar</h1>

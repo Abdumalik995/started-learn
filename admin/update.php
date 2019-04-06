@@ -12,7 +12,7 @@ if(isset($_POST['sub'])) {
 	if($_FILES['fayl']['error'] == 0) {
  	// fayl nomini uzgarivchiga tenglab olish
  	$faylNomi = $_FILES['fayl']['name'];
- 	//fayl yuklanishi kerak bulgan serverdagi joy.
+ 	//fayl yuklanishi kerak bulgan |serverdagi| joy.
  	$papka = dirname(_FILE_)."/rasm/".$faylNomi;
  	//vaqtinchalk joy
  	$kesh = $_FILES['fayl']['tmp_name'];

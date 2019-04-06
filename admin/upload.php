@@ -12,6 +12,7 @@ echo "</pre>";*/
  	$kesh = $_FILES['fayl']['tmp_name'];
  	// faylni yuklash funksiyasi
  	$a = move_uploaded_file($kesh, $papka);
+ 	
  	//agar fayl yuklangan bulsa
  	if ($a) {
  		echo "Fayl yuklandi: <b>$papka</b>";

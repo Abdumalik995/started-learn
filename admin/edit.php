@@ -47,9 +47,7 @@ $row = mysqli_fetch_assoc($res);
         
 		</div>
    
-          
     </div>
-        
 
 </body>
 </html> 
