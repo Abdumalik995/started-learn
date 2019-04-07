@@ -1,8 +1,8 @@
 <script type="text/javascript">
 	function res() {
-		let result = confirm("Web saytdan chiqmoqchimisiz");
+		let result = confirm("Tizimdan chiqmoqchimisiz?");
 		if(result == true) {
-			alert("tashrifingiz uchun rahmat!");
+			alert("Tashrifingiz uchun rahmat!");
 			location.href = 'index.php';
 		} else {
 			alert('Biz bilan qolganingiz uchun rahmat!');
