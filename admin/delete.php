@@ -10,7 +10,7 @@
 	$sql = "DELETE FROM talabalar where id = $id";
        $res = mysqli_query($db, $sql);
        if($res) {
-        header('Location: index.php');
+        header('Location: admin.php');
        } else {
         echo 'Xatolik';
        }

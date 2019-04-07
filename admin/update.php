@@ -25,12 +25,12 @@ if(isset($_POST['sub'])) {
 
 	$res = mysqli_query($db, $sql);
 	if($res) {
-		header("Location: index.php");
+		header("Location: admin.php");
 	} else {
 		echo "Xatolik:";
 	}
 } else {
-	header("Location: index.php");
+	header("Location: admin.php");
 }
 
 

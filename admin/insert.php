@@ -56,7 +56,7 @@
        $result1 = @mysqli_query($db, $query);
 
        if($result1) {
-        header("Location: index.php");
+        header("Location: admin.php");
        } else {
         echo "Ro'yhatga olishda xatolik yuzaga keldi!";
        } 

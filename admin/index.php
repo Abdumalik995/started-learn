@@ -1,116 +1,79 @@
 <?php 
-  include "baza.php";
+    include "baza.php";
+    //session_start();
+    if(isset($_POST['submit'])) {
 
-      $queryJoin = "SELECT talaba.id AS id, talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili, talaba.img AS Img,  fak.name AS Fakulteti FROM talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
-      $res = mysqli_query($db, $queryJoin);
-      
-      $talabalar1 = array();
-        while($row1 = mysqli_fetch_assoc($res)) {          
-        $talabalar1[] = $row1;
+      if(empty($_POST['login'])) {
+        $loginErr = "Loginni kiriting";
+        //header("Location: aform.php");
+      }else {
+        $login = test_input($_POST["login"]);
+        //$_SESSION['login'] = $login;
       }
-      $i=1;
-      /*======*/
-        
+      if(empty($_POST['parol'])) {
+        $parolErr = "Parolni kiriting";
+        //header("Location: aform.php");
+      }else {
+        $parol = md5($_POST["parol"]);
+        //$_SESSION['parol'] = $parol;
+      }      
+    }
+      
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+     
+    $sql = "Select * from user";
+    $res = mysqli_query($db, $sql);
+    $users = array();
+    while ($row = mysqli_fetch_assoc($res)) {
+        $users[] = $row;
+    };
+        foreach ($users as $user) { 
+            if($login == $user['login'] and $parol == $user['parol'] ) {
+            header("Location: admin.php");
+        } else {
+            $loginErr1 = "Login yoki parol xato";
+            if (empty($login) and empty($parol)) {
+                $loginErr1 = "";
+            }
+                
+        } 
+    }
 
  ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-	<title>Admin Control panel</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <style type="text/css">
-    * {
-        box-sizing: border-box;
-    }
-    body {
-      margin:0;
-      padding: 0;
-      background-color: #37b0ea;
-    }
-    .hero {
-        display: flex;
-        justify-content: space-between;
-    }
-    nav {
-      width: 21%;
-
-     
-    }
-    section {
-        width: 79%;
-    }
-    
-    table img {
-      width: 30px;
-    }
-  </style>
+	<title>Kirish</title>
+    <link rel="stylesheet" type="text/css" href="css/astyle.css">
 </head>
+
 <body>
-	<!--Header qismining boshlanishi-->
-<header>
-	<img src="img/logo.png">
-		<ul>
-			<li>ADMIN</li>
-		<li><a href=""><img src="img/user.png"></a></li>
-		<li><a href=""><img src="img/search.png"></a></li>
-		<li><a href=""><img src="img/refresh.png"></a></li>
-	</ul>
-		</header>
-<!--header qismining tugashi-->
-<!--chap blokni boshlanishi-->
-<div class="hero">
-    <nav>
-        <h1>Menyular bloki</h1>
-        <ul>
-            <li><a href="index.php">Talabalar</a></li>
-            <li><a href="panelf.php">Fakultetlar</a></li>
-            <li><a href="panelfan.php">Fanlar</a></li>
-            <li><a href="panels.php">Semstr natijalari</a></li>
-            <li><a href="#">Tizimdan chiqish</a></li>
-   
-        </ul>
-    </nav>
-    <!--chap blokni boshlanishi-->
-    <section>
-        <div class="content">
-            <h1>Asosiy ma'lumotlar</h1>
-            <a href="bazapanel.php" class="add">Qushish</a><br><br>
-            <table>
-                <tr>
-                    <th class="small">N</th>
-                    <th>Ismi</th>
-                    <th>Familiyasi</th>    
-                    <th>Manzili</th>
-                    <th>Fakulteti</th>
-                    <th>Img</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-              </tr>
-              
-                <?php foreach ($talabalar1 as  $talaba1) { ?>         
-                  <tr>    
-                  <td><?php echo $i; $i++ ?></td>
-                  <td style="display: none;"><?php $talaba1['id'] ?></td>
-                  <td><?php echo $talaba1['ISMI'] ?></td>  
-                  <td><?php echo $talaba1['Familiyasi'] ?></td>  
-                  <td><?php echo $talaba1['Manzili'] ?></td>  
-                  <td><?php echo $talaba1['Fakulteti'] ?></td>  
-                  <td><img src="<?php echo $talaba1['Img'] ?>"></td>  
-                         
-                    <td class="small"><a href="edit.php?id=<?=$talaba1['id']?>"><img src="img/edit.png"></a></td>
-                    <td class="small"><a href="delete.php?id=<?=$talaba1['id']?>"><img src="img/delete.png"></a></td>
-                  </tr>
-                <?php } ?>
+
+
+	 <div id="mail" style="width: 400px; margin-top: 50px; padding: 15px">
         
-            </table>
+            <h1>Kir<span>ish</span></h1>
+            <p><span class="red"><?php echo $loginErr1; ?></span></p>              
+            <form id="form" action="" method="post" autocomplete="off">
+            <input type="text" name="login"  placeholder="Login here">
+            <span class="red"> * <?php echo $loginErr;?></span>
+            <br>            
+            <input type="password" name="parol" placeholder="password here">
+            <span class="red">* <?php echo $parolErr;?></span>
+            <br>     
+            <br>                    
+            <input id="sub" type="submit" name="submit" value="Kirish">
+            <p style="color: blue">
+                Agarda siz ruyhatdan utmagan bulsangiz ruyhatdan utishingiz kerak. 
+            </p> 
+            <h3><a href="registr.php">Ruyhatdan utish</a></h3>       
         </div>
-    </section>
-</div>      
-<!--chap blokni tugashi-->
-<!--footer qismini boshlanishi-->
-<footer>
-Copyright © uicit.uz
-</footer>
+        
+
 </body>
-</html>
+</html> 

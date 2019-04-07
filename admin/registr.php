@@ -1,6 +1,8 @@
 <?php 
+    session_start();
     include "baza.php";
-
+   
+  
     if(isset($_POST['subr'])) {
 
       if(empty($_POST['login'])) {
@@ -8,12 +10,14 @@
         //header("Location: aform.php");
       }else {
         $login = test_input($_POST["login"]);
+        //$_SESSION['login'] = $login;
       }
       if(empty($_POST['parol'])) {
-        
+        $parolErr = "Parolni kiriting";
         //header("Location: aform.php");
       }else {
-        $parol = md5((($_POST["parol"])));
+        $parol = md5($_POST["parol"]);
+        //$_SESSION['parol'] = $parol;
       }      
     }
       
@@ -25,6 +29,10 @@
     }
     if(empty($login) and empty($parol)) {
         $query = '';
+       } elseif (empty($login)) {
+           $loginErr = "Login kiriting";
+       }elseif (empty($parol)) {
+           $parolErr = "Parol kiriting";
        } else {
          $query = "INSERT INTO user (`login`, `parol`) VALUES ('$login', '$parol')";
        }
@@ -32,7 +40,7 @@
        $result1 = @mysqli_query($db, $query);
 
        if($result1) {           
-        header("Location: index.php");
+        header("Location: admin.php");
        } else {
         //echo "Ro'yhatga olishda xatolik yuzaga keldi!";
        } 
@@ -70,8 +78,8 @@
                     <input type="text" name="login"  placeholder="Login here">
                     <span class="red"> * <?php echo $loginErr;?></span>
                     <br>            
-                    <input type="password" name="parol" placeholder="password here">
-                    <span class="red"></span>
+                    <input type="password" name="parol" minlength="" placeholder="password here">
+                    <span class="red"> * <?php echo $parolErr;?></span>
                     <br>     
                     <br>                    
                     <input id="sub" type="submit" name="subr" value="Kirish">  
