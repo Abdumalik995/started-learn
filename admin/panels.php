@@ -91,5 +91,6 @@
 <footer>
 Copyright © uicit.uz
 </footer>
+<?php include_once "blocks/js.php"; ?>
 </body>
 </html>
