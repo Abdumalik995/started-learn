@@ -6,14 +6,14 @@
       if(empty($_POST['login'])) {
         $loginErr = "Loginni kiriting";
         //header("Location: aform.php");
-      }else {
+      } else {
         $login = test_input($_POST["login"]);
         //$_SESSION['login'] = $login;
       }
       if(empty($_POST['parol'])) {
         $parolErr = "Parolni kiriting";
         //header("Location: aform.php");
-      }else {
+      } else {
         $parol = md5($_POST["parol"]);
         //$_SESSION['parol'] = $parol;
       }      
@@ -32,7 +32,7 @@
     while ($row = mysqli_fetch_assoc($res)) {
         $users[] = $row;
     };
-        foreach ($users as $user) { 
+        foreach ($users as $user) {
             if($login == $user['login'] and $parol == $user['parol'] ) {
             header("Location: admin.php");
         } else {
@@ -41,7 +41,7 @@
                 $loginErr1 = "";
             }
                 
-        } 
+        }
     }
 
  ?>

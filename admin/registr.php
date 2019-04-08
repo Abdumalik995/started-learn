@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    //session_start();
     include "baza.php";
    
   
@@ -31,7 +31,7 @@
         $query = '';
        } elseif (empty($login)) {
            $loginErr = "Login kiriting";
-       }elseif (empty($parol)) {
+       } elseif (empty($parol)) {
            $parolErr = "Parol kiriting";
        } else {
          $query = "INSERT INTO user (`login`, `parol`) VALUES ('$login', '$parol')";
