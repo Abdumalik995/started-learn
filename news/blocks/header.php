@@ -23,7 +23,7 @@ include "db.php";
 
                         <li><a href="content.php?id=<?=$row['id']?>"><?=$row['name']?></a></li>
                         <?php } ?>                        
-                 
+                    
                     </ul>
                   </div>
 

@@ -1,6 +1,6 @@
 <?php 
     include "baza.php";
-    session_start();
+    //session_start();
     if(isset($_POST['submit'])) {
 
       if(empty($_POST['login'])) {
@@ -8,14 +8,14 @@
         //header("Location: aform.php");
       } else {
         $login = test_input($_POST["login"]);
-        $_SESSION['login'] = $login;
+        //$_SESSION['login'] = $login;
       }
       if(empty($_POST['parol'])) {
         $parolErr = "Parolni kiriting";
         //header("Location: aform.php");
       } else {
         $parol = md5($_POST["parol"]);
-    $_SESSION['parol'] = $parol;
+        //$_SESSION['parol'] = $parol;
       }      
     }
       

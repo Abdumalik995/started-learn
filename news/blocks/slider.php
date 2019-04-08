@@ -1,3 +1,14 @@
+<?php 
+  include "db.php";
+
+  $query = "SELECT * FROM content";
+  $result = mysqli_query($db, $query);
+  $anons = array();
+  while($row = mysqli_fetch_assoc($result)) {
+    $anons[] =$row;
+}
+  //print_r($anons);
+ ?>
 <div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">
 
@@ -9,7 +20,7 @@
 
                 <div class="carousel-caption">
                       <h1>Example headline</h1>
-                      <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <p class="lead"></p>
                       <a class="btn btn-large btn-primary" href="#">Sign up today</a>
                 </div>
 
