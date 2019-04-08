@@ -1,6 +1,6 @@
 <?php 
     include "baza.php";
-    //session_start();
+    session_start();
     if(isset($_POST['submit'])) {
 
       if(empty($_POST['login'])) {
@@ -8,14 +8,14 @@
         //header("Location: aform.php");
       } else {
         $login = test_input($_POST["login"]);
-        //$_SESSION['login'] = $login;
+        $_SESSION['login'] = $login;
       }
       if(empty($_POST['parol'])) {
         $parolErr = "Parolni kiriting";
         //header("Location: aform.php");
       } else {
         $parol = md5($_POST["parol"]);
-        //$_SESSION['parol'] = $parol;
+    $_SESSION['parol'] = $parol;
       }      
     }
       
@@ -55,7 +55,7 @@
 <body>
 
 
-	 <div id="mail" style="width: 400px; margin-top: 50px; padding: 15px">
+	<div id="mail" style="width: 400px; margin-top: 50px; padding: 15px">
         
             <h1>Kir<span>ish</span></h1>
             <p><span class="red"><?php echo $loginErr1; ?></span></p>              
@@ -72,7 +72,7 @@
                 Agarda siz ruyhatdan utmagan bulsangiz ruyhatdan utishingiz kerak. 
             </p> 
             <h3><a href="registr.php">Ruyhatdan utish</a></h3>       
-        </div>
+    </div>
         
 
 </body>

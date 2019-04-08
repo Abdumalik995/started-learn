@@ -1,5 +1,6 @@
 <?php 
-    //session_start();
+    session_start();
+    //print_r($_SESSION);
   include "baza.php";
 
       $queryJoin = "SELECT talaba.id AS id, talaba.name AS ISMI, talaba.surname AS Familiyasi, talaba.adress AS Manzili, talaba.img AS Img,  fak.name AS Fakulteti FROM talabalar AS talaba LEFT JOIN yunalish AS fak ON talaba.yunalish_id=fak.id ORDER BY fak.id";
