@@ -34,7 +34,7 @@ $str = preg_replace('/\s\s+/', ' ', $str); // bu funksiya berilgan belgilar asos
 // select count(adress) as soni from talabalar where adress="Buxoro" // soni bo'yicha aynan Buxoroliklar soni
 // select distinct adress from talabalar // Qaysi adresslar buyicha ma'lumotlar(talabalar) borligi
 // select name, surname, adress from talabalar limit 3 // berilgan qiymat buyicha limitni chiqarish
-// select name, surname, adress, id from  talabalar where id>5 limit 3 // id si 7dan katta bulganlarni chiqarish
+// select name, surname, adress, id from  talabalar where id>5 limit 3 // id si 5dan katta bulganlarni chiqarish
 // select name, surname, adress, id from talabalar order by name limit 3 // tartiblash
 // select name, surname, adress, id from talabalar order by name + surname limit 5 // tartiblash name buyicha
 // select name, surname, adress, id from talabalar order by name desc limit 5 // teskari tartiblash nameni

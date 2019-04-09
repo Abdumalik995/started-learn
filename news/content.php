@@ -82,7 +82,7 @@ header("Content-Type: text/html; charset=utf-8");
   <!--Carousel
   ==================================================-->
   <?php 
-    include_once('blocks/slider.php');
+    //include_once('blocks/slider.php');
    ?>
   
     <!-- /Carousel -->
@@ -100,37 +100,14 @@ header("Content-Type: text/html; charset=utf-8");
       <?php foreach ($massiv as $value) { ?>
       	 <div class="span4">
       	 	<img src="rasm/<?=$value['img']?>">
+      	 	<h2><?=$value['name']?></h2>
+      	 	<p>
+      	 		<?=$value['anons']?>
+      	 	</p>
+      	 	<a href="">Batafsil</a>
       	 </div>
       <?php } ?>
      
-        <img src="img/icon3.png">
-        <h2>Feature A</h2>
-        <p>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-        </p>
-
-        <a href="#">Read More &rarr;</a>
-
-      </div>
-
-      <div class="span4">
-        <img src="img/icon2.png">
-        <h2>Feature B</h2>
-        <p>
-            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-            aliqua. 
-        </p>   
-          <a href="#">Read More &rarr;</a>    
-      </div>
-
-      <div class="span4">
-        <img src="img/icon1.png">
-        <h2>Feature C</h2>
-        <p>
-            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. 
-        </p>
-          <a href="#">Read More &rarr;</a>
-      </div>
   </div>
 
 
