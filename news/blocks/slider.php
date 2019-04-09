@@ -6,7 +6,7 @@
   $result = mysqli_query($db, $query);
   $anons = array();
   while($row = mysqli_fetch_assoc($result)) {
-    $anons[] =$row;
+    $anons[] = $row;
 }
   //print_r($anons);
  ?>
@@ -20,14 +20,14 @@
               <div class="span6">
 
                 <div class="carousel-caption">
-                      <h1><?=$contents[0]['name']?></h1>
-                      <p class="lead"><?=$contents[0]['anons']?></p>
+                      <h1><?=$anons[0]['name']?></h1>
+                      <p class="lead"><?=$anons[0]['anons']?></p>
                       <a class="btn btn-large btn-outline text-white" href="#">Batafsil</a>
                 </div>
 
               </div>
 
-                <div class="span6" style="margin-top: 100px"> <img src="rasm/<?=$contents[0]['img']?>"></div>
+                <div class="span6" style="margin-top: 100px"> <img src="rasm/<?=$anons[0]['img']?>"></div>
 
           </div>
         </div>
