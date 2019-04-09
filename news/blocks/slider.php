@@ -2,13 +2,14 @@
 
   include "db.php";
 
-  $query = "SELECT * FROM content";
+  $query = "SELECT * FROM content order by id desc limit 1";
   $result = mysqli_query($db, $query);
-  $anons = array();
-  while($row = mysqli_fetch_assoc($result)) {
-    $anons[] = $row;
-}
-  //print_r($anons);
+  //$anons = array();
+  //while($row = mysqli_fetch_assoc($result)) {
+ //   $anons[] = $row;
+//}
+$row = mysqli_fetch_assoc($result);
+ //print_r($anons);
  ?>
 <div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">
@@ -20,14 +21,14 @@
               <div class="span6">
 
                 <div class="carousel-caption">
-                      <h1><?=$anons[0]['name']?></h1>
-                      <p class="lead"><?=$anons[0]['anons']?></p>
+                      <h1><?=$row['name']?></h1>
+                      <p class="lead"><?=$row['anons']?></p>
                       <a class="btn btn-large btn-outline text-white" href="#">Batafsil</a>
                 </div>
 
               </div>
 
-                <div class="span6" style="margin-top: 100px"> <img src="rasm/<?=$anons[0]['img']?>"></div>
+                <div class="span6" style="margin-top: 100px"> <img src="rasm/<?=$row['img']?>" style="height:400px"></div>
 
           </div>
         </div>
