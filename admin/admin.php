@@ -85,14 +85,14 @@
                   
                     <?php foreach ($talabalar1 as  $talaba1) { ?>         
                       <tr>    
-                      <td><?php echo $i; $i++ ?></td>
-                      <td style="display: none;"><?php $talaba1['id'] ?></td>
-                      <td><?php echo $talaba1['ISMI'] ?></td>  
-                      <td><?php echo $talaba1['Familiyasi'] ?></td>  
-                      <td><?php echo $talaba1['Manzili'] ?></td>  
-                      <td><?php echo $talaba1['Fakulteti'] ?></td>  
-                      <td><img src="<?php echo $talaba1['Img'] ?>"></td>  
-                             
+                        <td><?php echo $i; $i++ ?></td>
+                        <td style="display: none;"><?php $talaba1['id'] ?></td>
+                        <td><?php echo $talaba1['ISMI'] ?></td>  
+                        <td><?php echo $talaba1['Familiyasi'] ?></td>  
+                        <td><?php echo $talaba1['Manzili'] ?></td>  
+                        <td><?php echo $talaba1['Fakulteti'] ?></td>  
+                        <td><img src="<?php echo $talaba1['Img'] ?>"></td>  
+                               
                         <td class="small"><a href="edit.php?id=<?=$talaba1['id']?>"><img src="img/edit.png"></a></td>
                         <td class="small"><a href="delete.php?id=<?=$talaba1['id']?>"><img src="img/delete.png"></a></td>
                       </tr>

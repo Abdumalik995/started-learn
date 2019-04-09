@@ -1,4 +1,5 @@
-<?php 
+<?php
+
   include "db.php";
 
   $query = "SELECT * FROM content";
@@ -19,14 +20,14 @@
               <div class="span6">
 
                 <div class="carousel-caption">
-                      <h1>Example headline</h1>
-                      <p class="lead"></p>
-                      <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+                      <h1><?=$contents[0]['name']?></h1>
+                      <p class="lead"><?=$contents[0]['anons']?></p>
+                      <a class="btn btn-large btn-outline text-white" href="#">Batafsil</a>
                 </div>
 
               </div>
 
-                <div class="span6"> <img src="img/slide/slide1.jpg"></div>
+                <div class="span6" style="margin-top: 100px"> <img src="rasm/<?=$contents[0]['img']?>"></div>
 
           </div>
         </div>
