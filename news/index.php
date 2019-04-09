@@ -1,7 +1,8 @@
 <?php 
   include "surov.php";
   header("Content-Type: text/html; charset=utf-8");
-  print_r($contents); 
+  //print_r($contents); 
+
  ?>
 <!DOCTYPE html>
 <html>
